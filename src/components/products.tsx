@@ -94,7 +94,7 @@ export default function Products({ showHeader = true, detailed = false }: { show
                 <div className="p-[1.4rem] flex flex-col flex-1">
                   <h3 className="text-[1.2rem] leading-tight">{p.name}</h3>
                   {p.subtitle && <p className="font-accent text-accent text-[1.15rem] leading-none mt-1">{p.subtitle}</p>}
-                  <p className="text-muted text-[.88rem] mt-2 flex-1">{p.desc}</p>
+                  <p className={`text-muted text-[.88rem] mt-2 flex-1 ${detailed ? "" : "line-clamp-2"}`}>{p.desc}</p>
 
                   {detailed ? (
                     <>
@@ -106,8 +106,8 @@ export default function Products({ showHeader = true, detailed = false }: { show
                   ) : (
                     <div className="flex items-center justify-between mt-3 gap-2">
                       <span className="font-display font-bold text-[1.2rem] text-primary whitespace-nowrap">
-                        dès {p.prices[0][1]}
-                        <small className="block font-body font-medium text-[.72rem] text-muted">le 100g · jusqu&apos;à 1 Kg</small>
+                        {p.prices[p.prices.length - 1][1]}
+                        <small className="block font-body font-medium text-[.72rem] text-muted">le 1 Kg</small>
                       </span>
                       <Link href={`/commander?saveur=${p.slug}`} className={btnClass("whatsapp", "md", "px-4! py-2.5! min-h-[44px]! text-[.85rem] whitespace-nowrap")}>
                         Commander
