@@ -12,12 +12,8 @@ const links = [
 
 function Logo({ onClick }: { onClick?: () => void }) {
   return (
-    <Link href="/" onClick={onClick} aria-label="Granola Ya Salame – accueil" className="flex items-center gap-2.5">
-      <Image src="/images/logo.png" alt="Logo Granola Ya Salame" width={48} height={48} className="rounded-full shadow-[0_4px_14px_rgba(33,30,24,.06)] bg-white" />
-      <span className="font-display font-bold text-[1.25rem] text-ink leading-tight">
-        Granola Ya Salame
-        <span className="block font-accent text-[.95rem] text-primary leading-[.7] font-normal">fait avec amour</span>
-      </span>
+    <Link href="/" onClick={onClick} aria-label="Granola Ya Salame – accueil" className="flex items-center">
+      <Image src="/images/logo.webp" alt="Granola Ya Salame" width={540} height={243} priority className="h-11 w-auto" />
     </Link>
   );
 }

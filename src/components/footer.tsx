@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { site, waLink } from "@/lib/site";
 
 const InstaIcon = () => (
@@ -19,12 +18,9 @@ export default function Footer() {
       <div className="container-x">
         <div className="grid gap-10 md:grid-cols-[1.6fr_1fr_1.3fr] mb-10">
           <div>
-            <Link href="/" className="flex items-center gap-2.5 mb-3.5 text-white">
-              <Image src="/images/logo.png" alt="Logo Granola Ya Salame" width={48} height={48} className="rounded-full bg-white" />
-              <span className="font-display font-bold text-[1.25rem] leading-tight">
-                Granola Ya Salame
-                <span className="block font-accent text-[.95rem] text-accent leading-[.7] font-normal">fait avec amour</span>
-              </span>
+            <Link href="/" className="inline-flex flex-col mb-3.5">
+              <span className="font-display font-bold text-[1.5rem] text-white leading-tight">Granola Ya Salame</span>
+              <span className="font-accent text-accent text-[1.05rem] leading-none">fait avec amour</span>
             </Link>
             <p className="text-[#b6ab98] max-w-[22rem] text-[.96rem]">
               Granola artisanal marocain, fait main à Casablanca. Healthy, naturel, sans conservateurs — pour des matins qui ont du goût.

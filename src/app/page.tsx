@@ -4,6 +4,7 @@ import Stats from "@/components/stats";
 import Products from "@/components/products";
 import Testimonials from "@/components/testimonials";
 import CtaBand from "@/components/cta-band";
+import ParallaxBanner from "@/components/parallax-banner";
 import Btn from "@/components/btn";
 
 export default function Home() {
@@ -23,6 +24,7 @@ export default function Home() {
           Découvrir nos saveurs
         </Btn>
       </CtaBand>
+      <ParallaxBanner />
     </>
   );
 }
