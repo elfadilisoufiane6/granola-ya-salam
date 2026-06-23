@@ -2,6 +2,8 @@ import type { NextConfig } from "next";
 import path from "node:path";
 
 const nextConfig: NextConfig = {
+  // Lean, self-contained server build for Docker / EasyPanel.
+  output: "standalone",
   // Pin the workspace root to this project (a stray lockfile exists in the home dir).
   turbopack: { root: path.resolve(__dirname) },
   images: {

@@ -55,9 +55,23 @@ Tailwind (`bg-cream`, `text-primary`, `bg-cta`…).
 - WhatsApp `212620142004`, email/réseaux, chiffres & avis (placeholders : 4.9/5, 800+).
 - Le dossier `legacy/` peut être supprimé une fois la migration validée.
 
-## 📦 Git / GitHub
-Le dépôt git est initialisé (`create-next-app`). Pour publier sur GitHub :
+## 🚀 Déploiement EasyPanel (Docker)
+Le projet est prêt pour EasyPanel via le `Dockerfile` (Next.js `output: "standalone"`).
+
+1. EasyPanel → **Create → App**
+2. **Source** : GitHub → `elfadilisoufiane6/granola-ya-salam`, branche `main`
+3. **Build** : `Dockerfile` (chemin : `./Dockerfile`)
+4. **Port** : `3000` (le conteneur écoute sur `0.0.0.0:3000`)
+5. **Deploy** → EasyPanel build l'image et assigne un domaine. Chaque `git push` peut redéployer.
+
+Test de l'image en local (optionnel) :
 ```bash
-gh auth login
-gh repo create granola-ya-salame --public --source=. --remote=origin --push
+docker build -t granola .
+docker run -p 3000:3000 granola   # http://localhost:3000
+```
+
+## 📦 Git / GitHub
+Dépôt : **https://github.com/elfadilisoufiane6/granola-ya-salam** (branche `main`).
+```bash
+git add -A && git commit -m "..." && git push
 ```
