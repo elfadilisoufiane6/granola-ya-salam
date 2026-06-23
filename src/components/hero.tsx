@@ -23,8 +23,8 @@ export default function Hero() {
       />
       {/* desktop scrim (left) */}
       <div className="hidden md:block absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(250,246,238,.94)_0%,rgba(250,246,238,.7)_36%,rgba(250,246,238,.15)_58%,rgba(250,246,238,0)_75%)]" />
-      {/* mobile scrim (top→bottom) */}
-      <div className="md:hidden absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgba(250,246,238,.92)_0%,rgba(250,246,238,.72)_45%,rgba(250,246,238,.55)_100%)]" />
+      {/* mobile scrim (léger : l'image reste visible à ~80%) */}
+      <div className="md:hidden absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgba(250,246,238,.40)_0%,rgba(250,246,238,.18)_50%,rgba(250,246,238,.10)_100%)]" />
 
       <div className="container-x">
         <Reveal className="max-w-[600px]">
