@@ -1,26 +1,73 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ============================================================
+   GRANOLA YA SALAME — Tailwind v4 theme
+   Palette : vert forêt + terracotta sur ivoire chaud
+   ============================================================ */
+@theme {
+  --color-cream:      #FAF6EE;
+  --color-ink:        #211E18;
+  --color-primary:    #2F6E57;
+  --color-primary-d:  #235543;
+  --color-accent:     #E2944E;
+  --color-accent-d:   #C97B36;
+  --color-secondary:  #B5532E;
+  --color-light:      #F1EAD9;
+  --color-muted:      #6E695E;
+  --color-cta:        #C75B33;
+  --color-cta-d:      #A8481F;
+  --color-wa:         #25D366;
+  --color-wa-d:       #1DA851;
+
+  --animate-marquee: marquee 26s linear infinite;
+  --animate-fab:     fab 2.6s infinite;
+  --animate-floaty:  floaty 4s ease-in-out infinite;
 }
 
+/* fonts wired from next/font (variables set on <html>) */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-display-f), Georgia, serif;
+  --font-body:    var(--font-body-f), system-ui, sans-serif;
+  --font-accent:  var(--font-accent-f), cursive;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes floaty { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@keyframes fab {
+  0%   { box-shadow: 0 10px 28px rgba(199,91,51,.45), 0 0 0 0 rgba(199,91,51,.5); }
+  70%  { box-shadow: 0 10px 28px rgba(199,91,51,.45), 0 0 0 16px rgba(199,91,51,0); }
+  100% { box-shadow: 0 10px 28px rgba(199,91,51,.45), 0 0 0 0 rgba(199,91,51,0); }
+}
+
+@layer base {
+  html { scroll-behavior: smooth; scroll-padding-top: 78px; }
+  body {
+    background: var(--color-cream);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+  }
+  /* subtle grain texture */
+  body::before {
+    content: ""; position: fixed; inset: 0; z-index: 1; pointer-events: none; opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* reusable layout width */
+@utility container-x {
+  width: min(100% - 2.5rem, 1200px);
+  margin-inline: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }

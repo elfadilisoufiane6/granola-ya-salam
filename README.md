@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Granola Ya Salame — Next.js
 
-## Getting Started
+Site vitrine de **Granola Ya Salame**, marque marocaine de granola artisanal (fait main à
+Casablanca). Migré d'un site statique HTML/CSS/JS vers **Next.js 16 (App Router)** +
+**TypeScript** + **Tailwind CSS v4**.
 
-First, run the development server:
+## 🧱 Stack
+- **Next.js 16** (App Router, `src/`, Turbopack)
+- **TypeScript** (strict)
+- **Tailwind CSS v4** (config CSS-first via `@theme` dans `globals.css`)
+- **next/font** (Fraunces · Outfit · Caveat) — zéro requête Google bloquante
+- **next/image** pour toutes les images, **next/link** pour la navigation interne
+- Animations : IntersectionObserver (composant `Reveal`), keyframes Tailwind (marquee, fab, float)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 📂 Structure
+```
+src/
+├── app/
+│   ├── layout.tsx          # fonts + metadata + Navbar/Footer/Fab
+│   ├── page.tsx            # Accueil
+│   ├── nos-saveurs/page.tsx
+│   ├── commander/page.tsx  # formulaire (Suspense + useSearchParams)
+│   └── globals.css         # thème Tailwind v4 (@theme, keyframes, base)
+└── components/             # Navbar, Hero, Marquee, Stats, Products, Testimonials,
+                            # Why, Story, CtaBand, PageHero, OrderForm, Faq, Footer, Fab,
+                            # Reveal, SectionHead, Btn
+public/images/              # logo, hero, photos produits (WebP)
+legacy/                     # ⚠️ site statique d'origine conservé pour référence
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🧭 Routes
+| Route | Page |
+|-------|------|
+| `/` | Accueil — hero plein écran, bandeau, chiffres, saveurs, avis, CTA |
+| `/nos-saveurs` | Produits + pourquoi nous + histoire |
+| `/commander` | Formulaire (nom · tél · ville · saveur · variante kg) → WhatsApp |
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Les cartes produit pointent vers `/commander?saveur=<slug>` et **pré-sélectionnent** la saveur dans le formulaire.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## ▶️ Lancer en local
+```bash
+npm install
+npm run dev      # http://localhost:3000
+npm run build    # build de production (testé : OK)
+npm run start    # sert le build
+npm run lint
+```
 
-## Learn More
+## 🎨 Thème (design tokens)
+Définis dans `src/app/globals.css` (`@theme`) : `cream #FAF6EE`, `primary #2F6E57` (vert forêt),
+`accent #E2944E`, `cta #C75B33` (terracotta), `ink #211E18`, etc. → utilisables comme classes
+Tailwind (`bg-cream`, `text-primary`, `bg-cta`…).
 
-To learn more about Next.js, take a look at the following resources:
+## 🔧 À ajuster avant prod
+- WhatsApp `212620142004`, email/réseaux, chiffres & avis (placeholders : 4.9/5, 800+).
+- Le dossier `legacy/` peut être supprimé une fois la migration validée.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📦 Git / GitHub
+Le dépôt git est initialisé (`create-next-app`). Pour publier sur GitHub :
+```bash
+gh auth login
+gh repo create granola-ya-salame --public --source=. --remote=origin --push
+```
