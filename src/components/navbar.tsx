@@ -34,8 +34,8 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 inset-x-0 z-[100] h-[78px] flex items-center transition-[background,box-shadow] duration-300 backdrop-blur-[10px] ${
-        scrolled ? "bg-cream/95 shadow-[0_4px_14px_rgba(33,30,24,.06)]" : "bg-cream/80"
+      className={`fixed top-0 inset-x-0 z-[100] h-[78px] flex items-center transition-[background,box-shadow] duration-300 ${
+        scrolled ? "bg-cream/90 backdrop-blur-[10px] shadow-[0_4px_14px_rgba(33,30,24,.06)]" : "bg-transparent"
       }`}
     >
       <div className="container-x flex items-center justify-between">
