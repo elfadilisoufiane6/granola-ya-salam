@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import Fab from "@/components/fab";
+import { site } from "@/lib/site";
 
 const display = Fraunces({
   subsets: ["latin"],
@@ -26,7 +27,7 @@ const accent = Caveat({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://granolayasalame.ma"),
+  metadataBase: new URL(site.url),
   title: {
     default: "Granola Ya Salame · Granola artisanal marocain, fait main à Casablanca",
     template: "%s · Granola Ya Salame",

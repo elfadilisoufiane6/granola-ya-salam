@@ -42,3 +42,6 @@ next-env.d.ts
 
 # legacy static site (local reference only)
 legacy/
+
+# keep the example env tracked
+!.env.example

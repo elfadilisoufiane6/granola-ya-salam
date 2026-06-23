@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { site, waLink } from "@/lib/site";
 
 const InstaIcon = () => (
   <svg viewBox="0 0 24 24" aria-hidden="true" className="w-5 h-5 fill-white">
@@ -42,7 +43,7 @@ export default function Footer() {
                   {l.label}
                 </Link>
               ))}
-              <a href="https://instagram.com/granolayasalame" target="_blank" rel="noopener" className="text-[#c4b9a6] text-[.95rem] hover:text-accent transition-colors">
+              <a href={site.instagramUrl} target="_blank" rel="noopener" className="text-[#c4b9a6] text-[.95rem] hover:text-accent transition-colors">
                 Instagram
               </a>
             </nav>
@@ -51,15 +52,15 @@ export default function Footer() {
           <div>
             <h4 className="font-body font-bold text-base mb-4 text-white">Contact</h4>
             <ul className="flex flex-col gap-2.5 text-[#c4b9a6] text-[.95rem]">
-              <li>📱 WhatsApp : <a href="https://wa.me/212620142004" className="hover:text-accent">+212 620-142004</a></li>
-              <li>📧 <a href="mailto:granolayasalame@gmail.com" className="hover:text-accent">granolayasalame@gmail.com</a></li>
-              <li>📍 Casablanca, Maroc</li>
+              <li>📱 WhatsApp : <a href={waLink()} className="hover:text-accent">{site.whatsappDisplay}</a></li>
+              <li>📧 <a href={`mailto:${site.email}`} className="hover:text-accent">{site.email}</a></li>
+              <li>📍 {site.city}, Maroc</li>
             </ul>
             <div className="flex gap-3 mt-4">
-              <a href="https://instagram.com/granolayasalame" target="_blank" rel="noopener" aria-label="Instagram" className="w-[42px] h-[42px] rounded-xl bg-white/[.08] grid place-items-center transition-all hover:bg-cta hover:-translate-y-0.5">
+              <a href={site.instagramUrl} target="_blank" rel="noopener" aria-label="Instagram" className="w-[42px] h-[42px] rounded-xl bg-white/[.08] grid place-items-center transition-all hover:bg-cta hover:-translate-y-0.5">
                 <InstaIcon />
               </a>
-              <a href="https://facebook.com/granolayasalame" target="_blank" rel="noopener" aria-label="Facebook" className="w-[42px] h-[42px] rounded-xl bg-white/[.08] grid place-items-center transition-all hover:bg-cta hover:-translate-y-0.5">
+              <a href={site.facebookUrl} target="_blank" rel="noopener" aria-label="Facebook" className="w-[42px] h-[42px] rounded-xl bg-white/[.08] grid place-items-center transition-all hover:bg-cta hover:-translate-y-0.5">
                 <FbIcon />
               </a>
             </div>

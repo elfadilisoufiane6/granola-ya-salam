@@ -2,8 +2,7 @@
 
 import { useSearchParams } from "next/navigation";
 import { btnClass } from "./btn";
-
-const WHATSAPP_PHONE = "212620142004";
+import { waLink } from "@/lib/site";
 
 const flavors = [
   "Granola Classique — Avoine & Miel",
@@ -43,7 +42,7 @@ export default function OrderForm() {
       `🥣 Saveur : ${v("flavor")}\n` +
       `⚖️ Variante : ${v("variant")}\n\n` +
       `Merci de me confirmer la disponibilité et le total. 🙏`;
-    window.open(`https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(msg)}`, "_blank", "noopener");
+    window.open(waLink(msg), "_blank", "noopener");
   }
 
   return (
