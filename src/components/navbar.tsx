@@ -13,7 +13,7 @@ const links = [
 function Logo({ onClick }: { onClick?: () => void }) {
   return (
     <Link href="/" onClick={onClick} aria-label="Granola Ya Salame – accueil" className="flex items-center">
-      <Image src="/images/logo.webp" alt="Granola Ya Salame" width={540} height={243} priority className="h-11 w-auto" />
+      <Image src="/images/logo.webp" alt="Granola Ya Salame" width={600} height={270} priority className="h-14 w-auto" />
     </Link>
   );
 }

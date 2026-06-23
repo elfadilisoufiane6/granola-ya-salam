@@ -6,8 +6,8 @@ export default function Story() {
     <section id="story" className="py-24 bg-light scroll-mt-[78px]">
       <div className="container-x grid md:grid-cols-[0.9fr_1.1fr] gap-14 items-center">
         <Reveal className="relative">
-          <div className="relative aspect-square rounded-[34px] overflow-hidden shadow-[0_26px_64px_rgba(33,30,24,.18)]">
-            <Image src="/images/produit-2-b.webp" alt="Granola Ya Salame, fait main à Casablanca" fill sizes="(max-width:768px) 90vw, 40vw" className="object-cover" />
+          <div className="relative aspect-[4/5] rounded-[34px] overflow-hidden shadow-[0_26px_64px_rgba(33,30,24,.18)]">
+            <Image src="/images/pack-1.webp" alt="Sachets de granola Ya Salame, fait main à Casablanca" fill sizes="(max-width:768px) 90vw, 40vw" className="object-cover" />
           </div>
           <span className="absolute -bottom-4 -left-4 bg-cream rounded-[18px] shadow-[0_12px_32px_rgba(33,30,24,.10)] px-5 py-3.5 font-accent text-[1.5rem] text-primary">
             depuis 2023 ✦
