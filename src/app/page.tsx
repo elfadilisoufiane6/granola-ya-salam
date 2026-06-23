@@ -14,6 +14,7 @@ export default function Home() {
       <Marquee />
       <Stats />
       <Products />
+      <ParallaxBanner />
       <Testimonials />
       <CtaBand
         title="Prête à goûter le meilleur granola du Maroc ?"
@@ -24,7 +25,6 @@ export default function Home() {
           Découvrir nos saveurs
         </Btn>
       </CtaBand>
-      <ParallaxBanner />
     </>
   );
 }
