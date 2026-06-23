@@ -29,13 +29,13 @@ export default function Hero() {
       <div className="container-x">
         <Reveal className="max-w-[600px]">
           <span className="inline-flex items-center gap-2 bg-white/70 border border-primary/25 text-primary font-semibold text-[.88rem] px-[1.1rem] py-2 rounded-full mb-5 backdrop-blur-[4px]">
-            🌿 100% Naturel · Fait Main à Casablanca
+            🌿 Énergie · Nature · Bien-être
           </span>
           <h1 className="text-[clamp(2.6rem,6vw,4.6rem)] leading-[1.03] text-ink">
             Le granola qui <span className="text-accent italic">change ton matin</span>
           </h1>
           <p className="font-accent text-[clamp(1.5rem,3vw,2.1rem)] text-secondary mt-2 font-bold">
-            Le plaisir sain, chaque jour 🇲🇦
+            Le plaisir sain, partagé avec amour 🇲🇦
           </p>
           <p className="text-[1.15rem] text-muted max-w-[33rem] my-[1.3rem]">
             Granola artisanal marocain — sans sucre raffiné, sans conservateurs, plein de fruits secs croustillants. Mdarbi b yddik, b qalbi.

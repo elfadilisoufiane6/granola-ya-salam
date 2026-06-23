@@ -3,10 +3,10 @@ import SectionHead from "./section-head";
 
 const reviews = [
   { q: "Le meilleur granola que j'ai mangé au Maroc — ya salame vraiment ! Croustillant et pas trop sucré.", n: "Fatima Z.", city: "Casablanca", i: "FZ", c: "bg-[#2F6E57]" },
-  { q: "La saveur amlou est incroyable, ça sent vraiment le fait maison. Livraison rapide en plus.", n: "Yasmine B.", city: "Rabat", i: "YB", c: "bg-[#C75B33]" },
-  { q: "Je commande chaque mois pour mon petit-déj. Mes enfants adorent le chocolat-noisettes !", n: "Khadija M.", city: "Marrakech", i: "KM", c: "bg-[#B5532E]" },
+  { q: "La saveur miel & cannelle est incroyable, ça sent vraiment le fait maison. Livraison rapide en plus.", n: "Yasmine B.", city: "Rabat", i: "YB", c: "bg-[#C75B33]" },
+  { q: "Je commande chaque mois pour mon petit-déj. Mes enfants adorent le chocolat !", n: "Khadija M.", city: "Marrakech", i: "KM", c: "bg-[#B5532E]" },
   { q: "Emballage soigné, goût authentique. On sent qu'il y a de l'amour derrière. Bravo l'équipe.", n: "Salim A.", city: "Tanger", i: "SA", c: "bg-[#4F7A4A]" },
-  { q: "Enfin un granola healthy et marocain. Le tropical est parfait l'été, je recommande à 100%.", n: "Imane K.", city: "Agadir", i: "IK", c: "bg-[#C9893A]" },
+  { q: "Enfin un granola healthy et marocain. Le premium est parfait, plein de fruits secs. Je recommande à 100%.", n: "Imane K.", city: "Agadir", i: "IK", c: "bg-[#C9893A]" },
   { q: "Produit premium, service au top. Commande reçue en 2 jours à Fès, tout était parfait.", n: "Hajar R.", city: "Fès", i: "HR", c: "bg-[#2F6E57]" },
 ];
 

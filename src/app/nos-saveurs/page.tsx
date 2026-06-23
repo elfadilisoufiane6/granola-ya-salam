@@ -19,7 +19,7 @@ export default function NosSaveursPage() {
         title="Nos saveurs 🥣"
         sub="Quatre recettes faites main à Casablanca — croustillant, naturel, et plein de goût."
       />
-      <Products showHeader={false} />
+      <Products showHeader={false} detailed />
       <Why />
       <Story />
       <CtaBand

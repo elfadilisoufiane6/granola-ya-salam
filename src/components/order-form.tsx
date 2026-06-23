@@ -5,17 +5,17 @@ import { btnClass } from "./btn";
 import { waLink } from "@/lib/site";
 
 const flavors = [
-  "Granola Classique — Avoine & Miel",
-  "Granola Marocain — Amlou & Amandes",
-  "Granola Chocolat & Noisettes",
-  "Granola Tropical — Coco & Ananas",
-  "Pack découverte (les 4)",
+  "Granola Premium — Fruits Secs & Graines",
+  "Granola Miel & Cannelle",
+  "Granola Chocolat",
+  "Granola Classique",
+  "Pack découverte",
 ];
 const slugMap: Record<string, string> = {
-  classique: "Classique",
-  marocain: "Marocain",
+  premium: "Premium",
+  miel: "Miel",
   chocolat: "Chocolat",
-  tropical: "Tropical",
+  classique: "Classique",
   pack: "Pack découverte",
 };
 
@@ -85,7 +85,7 @@ export default function OrderForm() {
           <label htmlFor="of-variant" className="block font-semibold text-[.9rem] mb-1.5">Variante (poids) *</label>
           <select id="of-variant" name="variant" required defaultValue="" className={field}>
             <option value="" disabled>Choisir…</option>
-            {["250 g", "500 g", "1 kg", "2 kg"].map((w) => (
+            {["100 g", "250 g", "500 g", "750 g", "1 Kg"].map((w) => (
               <option key={w} value={w}>{w}</option>
             ))}
           </select>
