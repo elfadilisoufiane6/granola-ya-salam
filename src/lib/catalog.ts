@@ -14,7 +14,7 @@ export const products: Product[] = [
     slug: "premium",
     name: "Granola Premium",
     subtitle: "Fruits Secs & Graines",
-    img: "/images/produit-2-b.webp",
+    img: "/images/produit-2.webp",
     alt: "Granola Premium fruits secs et graines",
     desc: "Avoine, amandes, noix, noix de cajou, pistaches, noisettes, graines de chia, lin et sésame, tournesol et graines de courge.",
     badge: { text: "Premium", bg: "bg-secondary" },
@@ -23,7 +23,7 @@ export const products: Product[] = [
   {
     slug: "miel",
     name: "Granola Miel & Cannelle",
-    img: "/images/produit-1-b.webp",
+    img: "/images/produit-1.webp",
     alt: "Granola miel et cannelle",
     desc: "Avoine, miel naturel, cannelle, amandes et raisins secs.",
     badge: { text: "⭐ Best-seller", bg: "bg-primary" },
@@ -32,7 +32,7 @@ export const products: Product[] = [
   {
     slug: "chocolat",
     name: "Granola Chocolat",
-    img: "/images/produit-3-b.webp",
+    img: "/images/produit-3.webp",
     alt: "Granola chocolat noir",
     desc: "Avoine, chocolat noir, amandes et noix de cajou.",
     badge: null,
@@ -41,7 +41,7 @@ export const products: Product[] = [
   {
     slug: "classique",
     name: "Granola Classique",
-    img: "/images/produit-4-b.webp",
+    img: "/images/produit-4.webp",
     alt: "Granola classique",
     desc: "Avoine, amandes, noix, raisins secs et graines saines.",
     badge: null,
