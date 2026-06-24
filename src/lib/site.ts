@@ -6,8 +6,8 @@
 export const site = {
   whatsappPhone: process.env.NEXT_PUBLIC_WHATSAPP_PHONE || "212620142004",
   whatsappDisplay: process.env.NEXT_PUBLIC_WHATSAPP_DISPLAY || "+212 620-142004",
-  instagramUrl: process.env.NEXT_PUBLIC_INSTAGRAM_URL || "https://instagram.com/granola_ya_salame",
-  facebookUrl: process.env.NEXT_PUBLIC_FACEBOOK_URL || "https://facebook.com/granolayasalame",
+  instagramUrl: process.env.NEXT_PUBLIC_INSTAGRAM_URL || "https://www.instagram.com/granola_ya_salame/",
+  facebookUrl: process.env.NEXT_PUBLIC_FACEBOOK_URL || "https://www.facebook.com/profile.php?id=61588802024962",
   email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "granolayasalame@gmail.com",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://granolayasalame.ma",
   city: process.env.NEXT_PUBLIC_CITY || "Casablanca",
