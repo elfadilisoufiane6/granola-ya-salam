@@ -9,7 +9,7 @@ export const site = {
   instagramUrl: process.env.NEXT_PUBLIC_INSTAGRAM_URL || "https://www.instagram.com/granola_ya_salame/",
   facebookUrl: process.env.NEXT_PUBLIC_FACEBOOK_URL || "https://www.facebook.com/profile.php?id=61588802024962",
   email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "granolayasalame@gmail.com",
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://granolayasalame.ma",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://granolayasalam.com",
   city: process.env.NEXT_PUBLIC_CITY || "Casablanca",
 };
 
