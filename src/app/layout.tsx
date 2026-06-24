@@ -34,7 +34,6 @@ export const metadata: Metadata = {
   },
   description:
     "Granola artisanal marocain, healthy et fait main à Casablanca. Sans sucre raffiné, sans conservateurs. Noté 4.9/5 par 800+ clients. Livraison partout au Maroc en 24–48h.",
-  icons: { icon: "/images/logo.png" },
   openGraph: {
     type: "website",
     locale: "fr_MA",
