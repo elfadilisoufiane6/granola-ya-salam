@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Story from "@/components/story";
+import Faq from "@/components/faq";
 import CtaBand from "@/components/cta-band";
 import Btn from "@/components/btn";
 
@@ -13,6 +14,7 @@ export default function NotreHistoirePage() {
   return (
     <>
       <Story className="pt-[calc(78px+3.5rem)] pb-24 bg-light scroll-mt-[78px]" />
+      <Faq />
       <CtaBand
         title="Envie de goûter notre granola ?"
         sub="Fait maison, livré chez toi en 24–48h partout au Maroc."
