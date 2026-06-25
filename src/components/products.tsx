@@ -7,13 +7,30 @@ import { products } from "@/lib/catalog";
 
 function PriceTable({ prices }: { prices: [string, string][] }) {
   return (
-    <div className="mt-3 mb-4 border-t border-primary/10">
-      {prices.map(([g, p]) => (
-        <div key={g} className="flex items-center justify-between py-1 border-b border-primary/10 last:border-0">
-          <span className="text-muted text-[.9rem]">📦 {g}</span>
-          <span className="font-display font-semibold text-primary text-[.98rem]">{p}</span>
-        </div>
-      ))}
+    <div className="mt-3 mb-4 rounded-2xl border border-primary/15 overflow-hidden bg-white/40">
+      <div className="flex items-center justify-between px-3.5 py-2 bg-light/70 text-[.68rem] font-semibold uppercase tracking-[.08em] text-muted">
+        <span>Format</span>
+        <span>Prix</span>
+      </div>
+      {prices.map(([g, p], i) => {
+        const best = i === prices.length - 1;
+        return (
+          <div
+            key={g}
+            className={`flex items-center justify-between px-3.5 py-2 border-t border-primary/10 ${best ? "bg-primary/[.06]" : ""}`}
+          >
+            <span className="flex items-center gap-2 text-ink/80 text-[.92rem]">
+              {g}
+              {best && (
+                <span className="text-[.6rem] font-bold uppercase tracking-[.06em] text-primary bg-primary/10 px-1.5 py-0.5 rounded-full">
+                  Meilleur prix
+                </span>
+              )}
+            </span>
+            <span className={`font-display font-semibold ${best ? "text-[1.05rem]" : "text-[.98rem]"} text-primary`}>{p}</span>
+          </div>
+        );
+      })}
     </div>
   );
 }
