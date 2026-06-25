@@ -17,7 +17,7 @@ const flavorOptions: { label: string; slug: string; prices: Row[] | null }[] = [
   { label: "Pack découverte", slug: "pack", prices: null },
 ];
 
-const genericGrammages: Row[] = [["100g", ""], ["250g", ""], ["500g", ""], ["750g", ""], ["1 Kg", ""]];
+const genericGrammages: Row[] = [["250g", ""], ["500g", ""], ["750g", ""], ["1 Kg", ""]];
 
 const field =
   "w-full px-4 py-3.5 rounded-xl border-[1.5px] border-ink/15 bg-white text-ink transition-[border-color,box-shadow] focus:outline-none focus:border-primary focus:ring-[3px] focus:ring-primary/15";

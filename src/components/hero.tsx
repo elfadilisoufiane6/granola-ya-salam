@@ -38,7 +38,7 @@ export default function Hero() {
             Le plaisir sain, partagé avec amour 🇲🇦
           </p>
           <p className="text-[1.15rem] text-muted max-w-[33rem] my-[1.3rem]">
-            Granola artisanal marocain — sans sucre raffiné, sans conservateurs, plein de fruits secs croustillants. Mdarbi b yddik, b qalbi.
+            Granola artisanal marocain — sans sucre raffiné, sans conservateurs, plein de fruits secs croustillants. Le petit-déjeuner idéal pour toute la famille.
           </p>
           <div className="flex flex-wrap gap-4 items-center">
             <Btn href="/commander" variant="whatsapp" size="lg">Commander maintenant</Btn>

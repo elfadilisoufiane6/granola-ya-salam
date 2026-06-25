@@ -18,7 +18,7 @@ export const products: Product[] = [
     alt: "Granola Premium fruits secs et graines",
     desc: "Avoine, amandes, noix, noix de cajou, pistaches, noisettes, graines de chia, lin et sésame, tournesol et graines de courge.",
     badge: { text: "Premium", bg: "bg-secondary" },
-    prices: [["100g", "25 DH"], ["250g", "65 DH"], ["500g", "120 DH"], ["750g", "185 DH"], ["1 Kg", "240 DH"]],
+    prices: [["250g", "65 DH"], ["500g", "120 DH"], ["750g", "185 DH"], ["1 Kg", "240 DH"]],
   },
   {
     slug: "miel",
@@ -27,7 +27,7 @@ export const products: Product[] = [
     alt: "Granola miel et cannelle",
     desc: "Avoine, miel naturel, cannelle, amandes et raisins secs.",
     badge: { text: "⭐ Best-seller", bg: "bg-primary" },
-    prices: [["100g", "20 DH"], ["250g", "45 DH"], ["500g", "80 DH"], ["750g", "115 DH"], ["1 Kg", "150 DH"]],
+    prices: [["250g", "45 DH"], ["500g", "80 DH"], ["750g", "115 DH"], ["1 Kg", "150 DH"]],
   },
   {
     slug: "chocolat",
@@ -36,7 +36,7 @@ export const products: Product[] = [
     alt: "Granola chocolat noir",
     desc: "Avoine, chocolat noir, amandes et noix de cajou.",
     badge: null,
-    prices: [["100g", "22 DH"], ["250g", "50 DH"], ["500g", "90 DH"], ["750g", "130 DH"], ["1 Kg", "165 DH"]],
+    prices: [["250g", "50 DH"], ["500g", "90 DH"], ["750g", "130 DH"], ["1 Kg", "165 DH"]],
   },
   {
     slug: "classique",
@@ -45,6 +45,6 @@ export const products: Product[] = [
     alt: "Granola classique",
     desc: "Avoine, amandes, noix, raisins secs et graines saines.",
     badge: null,
-    prices: [["100g", "20 DH"], ["250g", "45 DH"], ["500g", "80 DH"], ["750g", "115 DH"], ["1 Kg", "150 DH"]],
+    prices: [["250g", "45 DH"], ["500g", "80 DH"], ["750g", "115 DH"], ["1 Kg", "150 DH"]],
   },
 ];

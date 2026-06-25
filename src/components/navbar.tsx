@@ -7,7 +7,7 @@ import Image from "next/image";
 const links = [
   { href: "/", label: "Accueil" },
   { href: "/nos-saveurs", label: "Nos saveurs" },
-  { href: "/nos-saveurs#story", label: "Notre histoire" },
+  { href: "/notre-histoire", label: "Notre histoire" },
 ];
 
 function Logo({ onClick }: { onClick?: () => void }) {

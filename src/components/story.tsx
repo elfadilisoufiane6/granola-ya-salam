@@ -1,16 +1,16 @@
 import Image from "next/image";
 import Reveal from "./reveal";
 
-export default function Story() {
+export default function Story({ className = "py-24 bg-light scroll-mt-[78px]" }: { className?: string }) {
   return (
-    <section id="story" className="py-24 bg-light scroll-mt-[78px]">
+    <section id="story" className={className}>
       <div className="container-x grid md:grid-cols-[0.9fr_1.1fr] gap-14 items-center">
         <Reveal className="relative">
           <div className="relative aspect-[4/5] rounded-[34px] overflow-hidden shadow-[0_26px_64px_rgba(33,30,24,.18)]">
             <Image src="/images/pack-1.webp" alt="Sachets de granola Ya Salame, fait main à Casablanca" fill sizes="(max-width:768px) 90vw, 40vw" className="object-cover" />
           </div>
           <span className="absolute -bottom-4 -left-4 bg-cream rounded-[18px] shadow-[0_12px_32px_rgba(33,30,24,.10)] px-5 py-3.5 font-accent text-[1.5rem] text-primary">
-            depuis 2023 ✦
+            depuis 2025 ✦
           </span>
         </Reveal>
 
@@ -27,7 +27,7 @@ export default function Story() {
             Aujourd&apos;hui, des centaines de familles marocaines commencent leur journée avec nous. Et ça, ça n&apos;a pas de prix.
           </p>
           <p className="font-accent text-[2rem] text-primary">
-            — Salma
+            — Khadija
             <small className="block font-body not-italic text-[.9rem] text-muted">Fondatrice, Granola Ya Salame</small>
           </p>
         </Reveal>

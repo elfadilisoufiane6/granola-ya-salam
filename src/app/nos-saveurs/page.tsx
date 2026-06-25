@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import PageHero from "@/components/page-hero";
 import Products from "@/components/products";
 import Why from "@/components/why";
-import Story from "@/components/story";
 import CtaBand from "@/components/cta-band";
 import Btn from "@/components/btn";
 
@@ -21,7 +20,6 @@ export default function NosSaveursPage() {
       />
       <Products showHeader={false} detailed />
       <Why />
-      <Story />
       <CtaBand
         title="Une saveur t'a tapé dans l'œil ?"
         sub="Passe commande en 2 minutes — livraison partout au Maroc en 24–48h."

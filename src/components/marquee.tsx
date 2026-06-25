@@ -2,6 +2,7 @@ const items = [
   "🌿 100% Naturel",
   "🏠 Fait Main à Casablanca",
   "🚫 Sans conservateur",
+  "🚫 Sans sucre raffiné",
   "🍯 Au miel naturel",
   "🚚 Livraison 24–48h",
   "⭐ 4.9/5 · 800+ clients",
