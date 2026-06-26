@@ -10,7 +10,7 @@ export default function Story({ className = "py-24 bg-light scroll-mt-[78px]" }:
           <figure className="relative">
             <div className="relative aspect-[4/5] rounded-[34px] overflow-hidden shadow-[0_26px_64px_rgba(33,30,24,.18)]">
               <Image
-                src="/images/pack-1.webp"
+                src="/images/pack-1.jfif"
                 alt="Khadija, fondatrice de Granola Ya Salame, prépare le granola à la main à Casablanca"
                 fill
                 sizes="(max-width:768px) 90vw, 40vw"
