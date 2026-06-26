@@ -68,12 +68,13 @@ export default function Navbar() {
     "inline-flex items-center justify-center rounded-full bg-cta text-white font-semibold text-[.92rem] px-5 py-2.5 transition-colors hover:bg-cta-d";
 
   return (
-    <header
-      className={`fixed top-0 inset-x-0 z-[100] h-[78px] flex items-center transition-[background,box-shadow] duration-300 ${
-        scrolled || open ? "bg-cream/90 backdrop-blur-[10px] shadow-[0_4px_14px_rgba(33,30,24,.06)]" : "bg-transparent"
-      }`}
-    >
-      <div className="container-x flex items-center justify-between">
+    <>
+      <header
+        className={`fixed top-0 inset-x-0 z-[100] h-[78px] flex items-center transition-[background,box-shadow] duration-300 ${
+          scrolled || open ? "bg-cream/90 backdrop-blur-[10px] shadow-[0_4px_14px_rgba(33,30,24,.06)]" : "bg-transparent"
+        }`}
+      >
+        <div className="container-x flex items-center justify-between">
         <Logo />
 
         {/* desktop nav */}
@@ -97,22 +98,24 @@ export default function Navbar() {
           <span className="block w-[26px] h-[2.5px] rounded bg-ink" />
           <span className="block w-[26px] h-[2.5px] rounded bg-ink" />
         </button>
-      </div>
+        </div>
+      </header>
 
-      {/* ===== mobile menu ===== */}
+      {/* ===== mobile menu (rendered at root, NOT inside <header>, so it is never
+           trapped in the header's z-index stacking context) ===== */}
       {/* backdrop */}
       <button
         aria-hidden="true"
         tabIndex={-1}
         onClick={() => setOpen(false)}
-        className={`md:hidden fixed inset-0 z-[105] bg-ink/40 backdrop-blur-[2px] transition-opacity duration-300 ${
+        className={`md:hidden fixed inset-0 z-[190] bg-ink/40 backdrop-blur-[2px] transition-opacity duration-300 ${
           open ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
       />
 
       {/* drawer */}
       <nav
-        className={`md:hidden fixed inset-y-0 right-0 z-[110] w-[min(88%,360px)] bg-cream flex flex-col shadow-[-24px_0_70px_rgba(33,30,24,.18)] transition-transform duration-[350ms] ease-out ${
+        className={`md:hidden fixed inset-y-0 right-0 z-[200] w-[min(88%,360px)] bg-cream flex flex-col shadow-[-24px_0_70px_rgba(33,30,24,.18)] transition-transform duration-[350ms] ease-out ${
           open ? "translate-x-0" : "translate-x-full"
         }`}
         aria-label="Navigation mobile"
@@ -183,6 +186,6 @@ export default function Navbar() {
           </p>
         </div>
       </nav>
-    </header>
+    </>
   );
 }
