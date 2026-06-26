@@ -102,7 +102,7 @@ export default function Products({ showHeader = true, detailed = false }: { show
             sub="Disponible de 100g à 1 Kg — prix dégressifs. Le petit-déjeuner idéal pour toute la famille."
           />
         )}
-        <div className={`grid ${detailed ? "gap-x-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-10" : "gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"}`}>
+        <div className={`grid ${detailed ? "gap-x-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-10" : "gap-6 grid-cols-1 sm:grid-cols-2 max-w-[920px] mx-auto"}`}>
           {products.map((p, i) => (
             <Reveal key={p.slug} delay={i * 100} className="h-full">
               {detailed ? (
