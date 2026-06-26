@@ -3,7 +3,63 @@ import Link from "next/link";
 import Reveal from "./reveal";
 import SectionHead from "./section-head";
 import Btn, { btnClass } from "./btn";
-import { products } from "@/lib/catalog";
+import { products, type Product } from "@/lib/catalog";
+
+function CartIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-[1.15rem] h-[1.15rem]" aria-hidden="true">
+      <circle cx="9" cy="20" r="1.4" />
+      <circle cx="18" cy="20" r="1.4" />
+      <path d="M2 3h2.2l2.3 12.4a1.6 1.6 0 0 0 1.6 1.3h8.6a1.6 1.6 0 0 0 1.6-1.2L21.5 7H5.4" />
+    </svg>
+  );
+}
+
+/* Bold overlay card — large square image, warm gradient, white name + price,
+   floating "add to cart" icon button. Used on the home page. */
+function BoldCard({ p }: { p: Product }) {
+  return (
+    <article className="group relative rounded-[16px] overflow-hidden bg-light/40 shadow-[0_18px_40px_-22px_rgba(33,30,24,.55)] ring-1 ring-ink/[.04] transition-shadow duration-300 hover:shadow-[0_26px_55px_-22px_rgba(33,30,24,.6)]">
+      <div className="relative aspect-square">
+        <Image
+          src={p.img}
+          alt={p.alt}
+          fill
+          sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw"
+          className="object-cover transition-transform duration-[700ms] ease-out group-hover:scale-[1.05]"
+        />
+        {/* soft warm gradient — transparent → deep brown for legibility */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(34,21,10,.72)_0%,rgba(34,21,10,.34)_36%,rgba(34,21,10,0)_66%)]" />
+
+        {p.badge && (
+          <span className={`absolute top-4 left-4 ${p.badge.bg} text-white text-[.7rem] font-bold tracking-[.4px] uppercase px-3 py-1.5 rounded-full shadow-sm`}>
+            {p.badge.text}
+          </span>
+        )}
+
+        {/* name + price overlaid bottom-left */}
+        <div className="absolute inset-x-0 bottom-0 p-5 pr-20">
+          <h3 className="text-white text-[1.5rem] leading-tight drop-shadow-[0_1px_8px_rgba(0,0,0,.35)]">{p.name}</h3>
+          {p.subtitle && (
+            <p className="font-accent text-accent text-[1.15rem] leading-none mt-0.5 drop-shadow-[0_1px_6px_rgba(0,0,0,.4)]">{p.subtitle}</p>
+          )}
+          <p className="mt-2 text-white/95 font-display font-semibold text-[1.15rem] drop-shadow-[0_1px_8px_rgba(0,0,0,.4)]">
+            dès {p.prices[0][1]}
+          </p>
+        </div>
+
+        {/* floating add-to-cart icon button bottom-right */}
+        <Link
+          href={`/commander?saveur=${p.slug}`}
+          aria-label={`Commander ${p.name}`}
+          className="absolute bottom-4 right-4 grid place-items-center w-12 h-12 rounded-full bg-primary text-white shadow-[0_8px_20px_-4px_rgba(47,110,87,.6)] ring-1 ring-white/20 transition-transform duration-200 hover:scale-110 active:scale-95"
+        >
+          <CartIcon />
+        </Link>
+      </div>
+    </article>
+  );
+}
 
 function PriceTable({ prices }: { prices: [string, string][] }) {
   return (
@@ -46,43 +102,32 @@ export default function Products({ showHeader = true, detailed = false }: { show
             sub="Disponible de 100g à 1 Kg — prix dégressifs. Le petit-déjeuner idéal pour toute la famille."
           />
         )}
-        <div className={`grid gap-x-8 ${detailed ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-10" : "grid-cols-1 sm:grid-cols-2 gap-y-16 max-w-[920px] mx-auto"}`}>
+        <div className={`grid ${detailed ? "gap-x-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-10" : "gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"}`}>
           {products.map((p, i) => (
             <Reveal key={p.slug} delay={i * 100} className="h-full">
-              <article className="flex flex-col h-full group">
-                <div className={`relative aspect-square overflow-hidden bg-light/50 ${detailed ? "rounded-[20px]" : "rounded-[24px]"}`}>
-                  <Image src={p.img} alt={p.alt} fill sizes={detailed ? "(max-width:640px) 100vw, (max-width:1024px) 50vw, 25vw" : "(max-width:640px) 100vw, 460px"} className="object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.04]" />
-                  {p.badge && (
-                    <span className={`absolute top-4 left-4 ${p.badge.bg} text-white text-[.7rem] font-bold tracking-[.4px] uppercase px-3 py-1.5 rounded-full`}>
-                      {p.badge.text}
-                    </span>
-                  )}
-                </div>
-                <div className={`flex flex-col flex-1 ${detailed ? "pt-[1.1rem]" : "pt-[1.4rem]"}`}>
-                  <h3 className={`leading-tight ${detailed ? "text-[1.2rem]" : "text-[1.5rem]"}`}>{p.name}</h3>
-                  {p.subtitle && <p className={`font-accent text-accent leading-none mt-1 ${detailed ? "text-[1.15rem]" : "text-[1.3rem]"}`}>{p.subtitle}</p>}
-                  <p className={`text-muted mt-2 flex-1 ${detailed ? "text-[.88rem]" : "text-[.95rem] line-clamp-2"}`}>{p.desc}</p>
-
-                  {detailed ? (
-                    <>
-                      <PriceTable prices={p.prices} />
-                      <Link href={`/commander?saveur=${p.slug}`} className={btnClass("whatsapp", "md", "w-full min-h-[46px]! text-[.9rem]")}>
-                        Commander
-                      </Link>
-                    </>
-                  ) : (
-                    <div className="flex items-center justify-between mt-4 gap-2">
-                      <span className="font-display font-bold text-[1.5rem] text-primary whitespace-nowrap">
-                        {p.prices[p.prices.length - 1][1]}
-                        <small className="block font-body font-medium text-[.74rem] text-muted">le 1 Kg</small>
+              {detailed ? (
+                <article className="flex flex-col h-full group">
+                  <div className="relative aspect-square overflow-hidden bg-light/50 rounded-[20px]">
+                    <Image src={p.img} alt={p.alt} fill sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 25vw" className="object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.04]" />
+                    {p.badge && (
+                      <span className={`absolute top-4 left-4 ${p.badge.bg} text-white text-[.7rem] font-bold tracking-[.4px] uppercase px-3 py-1.5 rounded-full`}>
+                        {p.badge.text}
                       </span>
-                      <Link href={`/commander?saveur=${p.slug}`} className={btnClass("whatsapp", "md", "px-5! py-2.5! min-h-[46px]! text-[.9rem] whitespace-nowrap")}>
-                        Commander
-                      </Link>
-                    </div>
-                  )}
-                </div>
-              </article>
+                    )}
+                  </div>
+                  <div className="flex flex-col flex-1 pt-[1.1rem]">
+                    <h3 className="leading-tight text-[1.2rem]">{p.name}</h3>
+                    {p.subtitle && <p className="font-accent text-accent leading-none mt-1 text-[1.15rem]">{p.subtitle}</p>}
+                    <p className="text-muted mt-2 flex-1 text-[.88rem]">{p.desc}</p>
+                    <PriceTable prices={p.prices} />
+                    <Link href={`/commander?saveur=${p.slug}`} className={btnClass("whatsapp", "md", "w-full min-h-[46px]! text-[.9rem]")}>
+                      Commander
+                    </Link>
+                  </div>
+                </article>
+              ) : (
+                <BoldCard p={p} />
+              )}
             </Reveal>
           ))}
         </div>

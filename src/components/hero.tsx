@@ -61,7 +61,7 @@ export default function Hero() {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-center -z-20"
+          className="object-cover object-right -z-20"
         />
         {/* desktop scrim (left) */}
         <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(250,246,238,.94)_0%,rgba(250,246,238,.7)_36%,rgba(250,246,238,.15)_58%,rgba(250,246,238,0)_75%)]" />
