@@ -100,7 +100,7 @@ export default function Products({ showHeader = true, detailed = false }: { show
           <SectionHead
             eyebrow="Nos Granolas"
             title="Nos saveurs 🥣"
-            sub="Disponible de 100g à 1 Kg — prix dégressifs. Le petit-déjeuner idéal pour toute la famille."
+            sub="Disponible de 250g à 1 Kg — prix dégressifs. Le petit-déjeuner idéal pour toute la famille."
           />
         )}
         <div className={`grid ${detailed ? "gap-x-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-10" : "gap-6 grid-cols-1 sm:grid-cols-2 max-w-[920px] mx-auto"}`}>
