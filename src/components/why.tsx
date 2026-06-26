@@ -2,12 +2,12 @@ import Reveal from "./reveal";
 import SectionHead from "./section-head";
 
 const cards = [
-  { ico: "🌿", t: "100% Naturel", p: "Des ingrédients vrais, rien d'artificiel." },
-  { ico: "🚫", t: "Sans Conservateurs", p: "Aucun additif ni conservateur ajouté." },
-  { ico: "💪", t: "Riche en Fibres & Protéines", p: "L'énergie qu'il faut pour bien démarrer." },
-  { ico: "❤️", t: "Fait avec Amour", p: "Préparé à la main, en petites quantités." },
-  { ico: "⚡", t: "Énergie Durable", p: "Un petit-déjeuner qui tient toute la matinée." },
-  { ico: "🌾", t: "Ingrédients Sélectionnés", p: "Avoine, fruits secs et graines de qualité." },
+  { ico: "🍯", t: "Sucré au miel, jamais au sucre blanc", p: "Zéro sucre raffiné, zéro sirop industriel. La douceur vient du miel naturel et des fruits secs. Point." },
+  { ico: "👩‍🍳", t: "Fait main par Khadija, à Casablanca", p: "Chaque fournée sort de sa cuisine, en petites quantités. Pas d'usine, pas de tapis roulant." },
+  { ico: "📅", t: "Préparé peu et souvent", p: "On torréfie en petites séries. Le sachet que vous recevez a quelques jours — pas un an de stock." },
+  { ico: "🥜", t: "Généreux en fruits secs", p: "On ne remplit pas le sachet d'avoine bon marché. Les amandes, noix et graines, vous les voyez et vous les croquez." },
+  { ico: "🇲🇦", t: "Pensé pour le goût marocain", p: "Cannelle, miel, recettes qui rappellent le petit-déj de la maison. Healthy, mais jamais fade." },
+  { ico: "🚚", t: "Livré frais, payé à la livraison", p: "Partout au Maroc en 24–48h, de Tanger à Agadir. Vous goûtez d'abord, vous payez ensuite." },
 ];
 
 export default function Why() {

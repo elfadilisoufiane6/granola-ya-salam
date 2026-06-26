@@ -119,8 +119,20 @@ export default function Products({ showHeader = true, detailed = false }: { show
                   <div className="flex flex-col flex-1 pt-[1.1rem]">
                     <h3 className="leading-tight text-[1.2rem]">{p.name}</h3>
                     {p.subtitle && <p className="font-accent text-accent leading-none mt-1 text-[1.15rem]">{p.subtitle}</p>}
-                    <p className="text-muted mt-2 flex-1 text-[.88rem]">{p.desc}</p>
+                    {p.tagline && <p className="mt-2 text-[.95rem] font-semibold text-ink leading-snug">{p.tagline}</p>}
+                    <p className="text-muted mt-1.5 text-[.88rem]">{p.desc}</p>
+                    {p.forWho && (
+                      <p className="mt-2.5 text-[.8rem] text-primary leading-snug">
+                        <span className="font-semibold">Pour qui ?</span> {p.forWho}
+                      </p>
+                    )}
+                    <div className="flex-1" />
                     <PriceTable prices={p.prices} />
+                    {p.priceNote && (
+                      <p className="text-[.78rem] text-muted italic leading-snug -mt-1 mb-3.5 border-l-2 border-secondary/30 pl-3">
+                        {p.priceNote}
+                      </p>
+                    )}
                     <Link href={`/commander?saveur=${p.slug}`} className={btnClass("whatsapp", "md", "w-full min-h-[46px]! text-[.9rem]")}>
                       Commander
                     </Link>
