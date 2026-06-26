@@ -12,14 +12,23 @@ const avatars = [
 export default function Hero() {
   return (
     <section className="relative min-h-[100svh] flex items-center pt-[calc(78px+2rem)] pb-12 overflow-hidden isolate">
-      {/* full-bleed image */}
+      {/* full-bleed image — mobile */}
+      <Image
+        src="/images/hero-mobile.png"
+        alt="La gamme Granola Ya Salame — granola artisanal marocain"
+        fill
+        priority
+        sizes="100vw"
+        className="md:hidden object-cover object-center -z-20"
+      />
+      {/* full-bleed image — desktop */}
       <Image
         src="/images/hero-full.webp"
         alt="La gamme Granola Ya Salame — granola artisanal marocain"
         fill
         priority
         sizes="100vw"
-        className="object-cover object-[72%_center] md:object-center -z-20"
+        className="hidden md:block object-cover object-center -z-20"
       />
       {/* desktop scrim (left) */}
       <div className="hidden md:block absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(250,246,238,.94)_0%,rgba(250,246,238,.7)_36%,rgba(250,246,238,.15)_58%,rgba(250,246,238,0)_75%)]" />

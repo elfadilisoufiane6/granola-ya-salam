@@ -46,22 +46,22 @@ export default function Products({ showHeader = true, detailed = false }: { show
             sub="Disponible de 100g à 1 Kg — prix dégressifs. Le petit-déjeuner idéal pour toute la famille."
           />
         )}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[1.6rem]">
+        <div className={`grid gap-x-8 ${detailed ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-10" : "grid-cols-1 sm:grid-cols-2 gap-y-16 max-w-[920px] mx-auto"}`}>
           {products.map((p, i) => (
             <Reveal key={p.slug} delay={i * 100} className="h-full">
               <article className="flex flex-col h-full group">
-                <div className="relative aspect-square overflow-hidden rounded-[20px] bg-light/50">
-                  <Image src={p.img} alt={p.alt} fill sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 25vw" className="object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.04]" />
+                <div className={`relative aspect-square overflow-hidden bg-light/50 ${detailed ? "rounded-[20px]" : "rounded-[24px]"}`}>
+                  <Image src={p.img} alt={p.alt} fill sizes={detailed ? "(max-width:640px) 100vw, (max-width:1024px) 50vw, 25vw" : "(max-width:640px) 100vw, 460px"} className="object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.04]" />
                   {p.badge && (
-                    <span className={`absolute top-3 left-3 ${p.badge.bg} text-white text-[.7rem] font-bold tracking-[.4px] uppercase px-3 py-1.5 rounded-full`}>
+                    <span className={`absolute top-4 left-4 ${p.badge.bg} text-white text-[.7rem] font-bold tracking-[.4px] uppercase px-3 py-1.5 rounded-full`}>
                       {p.badge.text}
                     </span>
                   )}
                 </div>
-                <div className="pt-[1.1rem] flex flex-col flex-1">
-                  <h3 className="text-[1.2rem] leading-tight">{p.name}</h3>
-                  {p.subtitle && <p className="font-accent text-accent text-[1.15rem] leading-none mt-1">{p.subtitle}</p>}
-                  <p className={`text-muted text-[.88rem] mt-2 flex-1 ${detailed ? "" : "line-clamp-2"}`}>{p.desc}</p>
+                <div className={`flex flex-col flex-1 ${detailed ? "pt-[1.1rem]" : "pt-[1.4rem]"}`}>
+                  <h3 className={`leading-tight ${detailed ? "text-[1.2rem]" : "text-[1.5rem]"}`}>{p.name}</h3>
+                  {p.subtitle && <p className={`font-accent text-accent leading-none mt-1 ${detailed ? "text-[1.15rem]" : "text-[1.3rem]"}`}>{p.subtitle}</p>}
+                  <p className={`text-muted mt-2 flex-1 ${detailed ? "text-[.88rem]" : "text-[.95rem] line-clamp-2"}`}>{p.desc}</p>
 
                   {detailed ? (
                     <>
@@ -71,12 +71,12 @@ export default function Products({ showHeader = true, detailed = false }: { show
                       </Link>
                     </>
                   ) : (
-                    <div className="flex items-center justify-between mt-3 gap-2">
-                      <span className="font-display font-bold text-[1.2rem] text-primary whitespace-nowrap">
+                    <div className="flex items-center justify-between mt-4 gap-2">
+                      <span className="font-display font-bold text-[1.5rem] text-primary whitespace-nowrap">
                         {p.prices[p.prices.length - 1][1]}
-                        <small className="block font-body font-medium text-[.72rem] text-muted">le 1 Kg</small>
+                        <small className="block font-body font-medium text-[.74rem] text-muted">le 1 Kg</small>
                       </span>
-                      <Link href={`/commander?saveur=${p.slug}`} className={btnClass("whatsapp", "md", "px-4! py-2.5! min-h-[44px]! text-[.85rem] whitespace-nowrap")}>
+                      <Link href={`/commander?saveur=${p.slug}`} className={btnClass("whatsapp", "md", "px-5! py-2.5! min-h-[46px]! text-[.9rem] whitespace-nowrap")}>
                         Commander
                       </Link>
                     </div>
