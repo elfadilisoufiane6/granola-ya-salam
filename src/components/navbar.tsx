@@ -137,20 +137,19 @@ export default function Navbar() {
         {/* links */}
         <div className="flex-1 overflow-y-auto px-6 py-7">
           <ul className="flex flex-col">
-            {links.map((l, i) => {
+            {links.map((l) => {
               const active = pathname === l.href;
               return (
                 <li key={l.href} className="border-b border-ink/[.06]">
                   <Link
                     href={l.href}
                     onClick={() => setOpen(false)}
-                    className="group flex items-baseline gap-3 py-4"
+                    className="group flex items-center gap-3 py-4"
                   >
-                    <span className="font-display text-[.8rem] text-accent/70 tabular-nums w-6">0{i + 1}</span>
                     <span className={`font-display text-[1.55rem] leading-none transition-colors ${active ? "text-primary" : "text-ink group-hover:text-primary"}`}>
                       {l.label}
                     </span>
-                    {active && <span className="ml-auto self-center w-1.5 h-1.5 rounded-full bg-primary" />}
+                    {active && <span className="ml-auto w-1.5 h-1.5 rounded-full bg-primary" />}
                   </Link>
                 </li>
               );
