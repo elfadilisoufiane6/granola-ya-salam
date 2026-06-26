@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Btn, { btnClass } from "./btn";
 import Reveal from "./reveal";
+import UrgencyBadge from "./urgency-badge";
 
 const avatars = [
   { i: "FZ", c: "bg-[#2F6E57]" },
@@ -18,7 +19,7 @@ export default function Hero() {
         {/* image entière, claire */}
         <Image
           src="/images/hero-mobile.png"
-          alt="La gamme Granola Ya Salame — granola artisanal marocain"
+          alt="Granola artisanal marocain Granola Ya Salame — fruits secs, miel et avoine, fait main à Casablanca"
           width={887}
           height={1774}
           priority
@@ -35,7 +36,13 @@ export default function Hero() {
           <p className="text-[.98rem] text-muted font-medium mt-2.5">
             Sans sucre raffiné · sans conservateurs · 100% artisanal 🇲🇦
           </p>
-          <div className="flex justify-center gap-3 mt-5">
+          <p className="text-[.95rem] text-ink font-semibold mt-2">
+            À partir de <span className="text-primary">45 DH</span> · Livraison 24–48h partout au Maroc
+          </p>
+          <div className="flex justify-center mt-3">
+            <UrgencyBadge />
+          </div>
+          <div className="flex justify-center gap-3 mt-4">
             <Link
               href="/commander"
               className={btnClass("whatsapp", "md", "px-5! py-2.5! min-h-[44px]! text-[.92rem]!")}
@@ -57,7 +64,7 @@ export default function Hero() {
         {/* full-bleed image */}
         <Image
           src="/images/hero-full.webp"
-          alt="La gamme Granola Ya Salame — granola artisanal marocain"
+          alt="Bols de granola artisanal Granola Ya Salame aux fruits secs et miel — petit-déjeuner sain fait main à Casablanca"
           fill
           priority
           sizes="100vw"
@@ -77,12 +84,16 @@ export default function Hero() {
             <p className="font-accent text-[clamp(1.5rem,3vw,2.1rem)] text-secondary mt-2 font-bold">
               Le plaisir sain, partagé avec amour 🇲🇦
             </p>
-            <p className="text-[1.15rem] text-muted max-w-[33rem] my-[1.3rem]">
+            <p className="text-[1.15rem] text-muted max-w-[33rem] mt-[1.3rem] mb-3">
               Granola artisanal marocain — sans sucre raffiné, sans conservateurs, plein de fruits secs croustillants. Le petit-déjeuner idéal pour toute la famille.
+            </p>
+            <p className="text-[1.15rem] text-ink font-semibold mb-[1.3rem]">
+              À partir de <span className="text-primary">45 DH</span> · Livraison 24–48h partout au Maroc
             </p>
             <div className="flex flex-wrap gap-4 items-center">
               <Btn href="/commander" variant="whatsapp" size="lg">Commander maintenant</Btn>
               <Btn href="/nos-saveurs" variant="ghost" size="lg">Voir nos saveurs ↓</Btn>
+              <UrgencyBadge />
             </div>
             <div className="flex items-center gap-[.9rem] mt-[1.9rem] flex-wrap">
               <div className="flex" aria-hidden="true">
