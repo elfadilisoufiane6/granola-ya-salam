@@ -86,16 +86,16 @@ export default function Navbar() {
           <Link href="/commander" className={navBtn}>Commander</Link>
         </nav>
 
-        {/* burger */}
+        {/* burger (hidden while the drawer is open — the drawer has its own close button) */}
         <button
-          className="md:hidden flex flex-col gap-[5px] p-2 z-[120]"
-          aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
+          className={`md:hidden flex-col gap-[5px] p-2 z-[120] ${open ? "hidden" : "flex"}`}
+          aria-label="Ouvrir le menu"
           aria-expanded={open}
-          onClick={() => setOpen((v) => !v)}
+          onClick={() => setOpen(true)}
         >
-          <span className={`block w-[26px] h-[2.5px] rounded bg-ink transition-transform ${open ? "translate-y-[7.5px] rotate-45" : ""}`} />
-          <span className={`block w-[26px] h-[2.5px] rounded bg-ink transition-opacity ${open ? "opacity-0" : ""}`} />
-          <span className={`block w-[26px] h-[2.5px] rounded bg-ink transition-transform ${open ? "-translate-y-[7.5px] -rotate-45" : ""}`} />
+          <span className="block w-[26px] h-[2.5px] rounded bg-ink" />
+          <span className="block w-[26px] h-[2.5px] rounded bg-ink" />
+          <span className="block w-[26px] h-[2.5px] rounded bg-ink" />
         </button>
       </div>
 
@@ -112,7 +112,7 @@ export default function Navbar() {
 
       {/* drawer */}
       <nav
-        className={`md:hidden fixed inset-y-0 right-0 z-[110] w-[min(88%,360px)] bg-cream flex flex-col shadow-[-24px_0_70px_rgba(33,30,24,.18)] transition-transform duration-[350ms] ease-[cubic-bezier(.4,0,.2,1)] ${
+        className={`md:hidden fixed inset-y-0 right-0 z-[110] w-[min(88%,360px)] bg-cream flex flex-col shadow-[-24px_0_70px_rgba(33,30,24,.18)] transition-transform duration-[350ms] ease-out ${
           open ? "translate-x-0" : "translate-x-full"
         }`}
         aria-label="Navigation mobile"
