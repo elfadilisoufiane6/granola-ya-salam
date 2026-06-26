@@ -3,7 +3,9 @@
 import { useState } from "react";
 import SectionHead from "./section-head";
 
-const items = [
+type Item = { q: string; a: string };
+
+const items: Item[] = [
   { q: "Vos produits contiennent-ils du sucre ajouté ?", a: "Non. Nous utilisons uniquement du miel naturel comme sucrant — jamais de sucre raffiné ni de sirops industriels." },
   { q: "Quel est le délai de livraison ?", a: "2 à 3 jours ouvrables partout au Maroc après confirmation. Les grandes villes sont souvent livrées en 24–48h." },
   { q: "Comment payer ma commande ?", a: "Paiement à la livraison (cash) ou par virement — on en discute simplement sur WhatsApp. Aucun paiement en ligne requis." },
@@ -11,15 +13,16 @@ const items = [
   { q: "Proposez-vous des packs ou cadeaux ?", a: "Oui ! Box cadeaux personnalisées et packs découverte multi-saveurs. Indiquez-le dans le formulaire ou sur WhatsApp." },
 ];
 
-export default function Faq() {
+export default function Faq({ extra = [] }: { extra?: Item[] }) {
   const [open, setOpen] = useState<number | null>(null);
+  const all = [...items, ...extra];
 
   return (
     <section id="faq" className="py-24">
       <div className="container-x">
         <SectionHead eyebrow="Vous vous demandez ?" title="Questions fréquentes" />
         <div className="max-w-[760px] mx-auto">
-          {items.map((it, i) => {
+          {all.map((it, i) => {
             const isOpen = open === i;
             return (
               <div
