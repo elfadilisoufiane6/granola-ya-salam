@@ -7,8 +7,8 @@ import { products } from "@/lib/catalog";
 
 function PriceTable({ prices }: { prices: [string, string][] }) {
   return (
-    <div className="mt-3 mb-4 rounded-2xl border border-primary/15 overflow-hidden bg-white/40">
-      <div className="flex items-center justify-between px-3.5 py-2 bg-light/70 text-[.68rem] font-semibold uppercase tracking-[.08em] text-muted">
+    <div className="mt-3 mb-4">
+      <div className="flex items-center justify-between pb-1.5 text-[.66rem] font-semibold uppercase tracking-[.12em] text-muted/70">
         <span>Format</span>
         <span>Prix</span>
       </div>
@@ -17,17 +17,17 @@ function PriceTable({ prices }: { prices: [string, string][] }) {
         return (
           <div
             key={g}
-            className={`flex items-center justify-between px-3.5 py-2 border-t border-primary/10 ${best ? "bg-primary/[.06]" : ""}`}
+            className="flex items-center justify-between py-2 border-t border-ink/[.08]"
           >
             <span className="flex items-center gap-2 text-ink/80 text-[.92rem]">
               {g}
               {best && (
-                <span className="text-[.6rem] font-bold uppercase tracking-[.06em] text-primary bg-primary/10 px-1.5 py-0.5 rounded-full">
+                <span className="text-[.6rem] font-bold uppercase tracking-[.06em] text-primary">
                   Meilleur prix
                 </span>
               )}
             </span>
-            <span className={`font-display font-semibold ${best ? "text-[1.05rem]" : "text-[.98rem]"} text-primary`}>{p}</span>
+            <span className={`font-display font-semibold ${best ? "text-[1.05rem] text-primary" : "text-[.98rem] text-ink/80"}`}>{p}</span>
           </div>
         );
       })}
@@ -49,16 +49,16 @@ export default function Products({ showHeader = true, detailed = false }: { show
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[1.6rem]">
           {products.map((p, i) => (
             <Reveal key={p.slug} delay={i * 100} className="h-full">
-              <article className="bg-cream rounded-[26px] overflow-hidden shadow-[0_4px_14px_rgba(33,30,24,.06)] border border-[rgba(232,200,154,.55)] flex flex-col h-full transition-[transform,box-shadow] duration-300 hover:-translate-y-2 hover:shadow-[0_26px_64px_rgba(33,30,24,.18)] group">
-                <div className="relative aspect-square overflow-hidden">
-                  <Image src={p.img} alt={p.alt} fill sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 25vw" className="object-cover transition-transform duration-500 group-hover:scale-[1.07]" />
+              <article className="flex flex-col h-full group">
+                <div className="relative aspect-square overflow-hidden rounded-[20px] bg-light/50">
+                  <Image src={p.img} alt={p.alt} fill sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 25vw" className="object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.04]" />
                   {p.badge && (
                     <span className={`absolute top-3 left-3 ${p.badge.bg} text-white text-[.7rem] font-bold tracking-[.4px] uppercase px-3 py-1.5 rounded-full`}>
                       {p.badge.text}
                     </span>
                   )}
                 </div>
-                <div className="p-[1.4rem] flex flex-col flex-1">
+                <div className="pt-[1.1rem] flex flex-col flex-1">
                   <h3 className="text-[1.2rem] leading-tight">{p.name}</h3>
                   {p.subtitle && <p className="font-accent text-accent text-[1.15rem] leading-none mt-1">{p.subtitle}</p>}
                   <p className={`text-muted text-[.88rem] mt-2 flex-1 ${detailed ? "" : "line-clamp-2"}`}>{p.desc}</p>
