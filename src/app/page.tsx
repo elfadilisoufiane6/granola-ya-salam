@@ -15,9 +15,9 @@ export default function Home() {
       <Marquee />
       <Stats />
       <Products />
-      <FounderTeaser />
       <ParallaxBanner />
       <Testimonials />
+      <FounderTeaser />
       <CtaBand
         title="Prête à goûter le meilleur granola du Maroc ?"
         sub="Commande en 2 minutes — on te livre chez toi en 24–48h."

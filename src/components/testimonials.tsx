@@ -11,11 +11,10 @@ const featured = {
 };
 
 const reviews = [
-  { q: "Le meilleur granola que j'ai mangé au Maroc — ya salame vraiment ! Croustillant et pas trop sucré.", n: "Fatima Z.", city: "Casablanca", i: "FZ", c: "bg-[#2F6E57]" },
-  { q: "La saveur miel & cannelle est incroyable, ça sent vraiment le fait maison. Livraison rapide en plus.", n: "Yasmine B.", city: "Rabat", i: "YB", c: "bg-[#C75B33]" },
-  { q: "Je commande chaque mois pour mon petit-déj. Mes enfants adorent le chocolat !", n: "Khadija M.", city: "Marrakech", i: "KM", c: "bg-[#B5532E]" },
-  { q: "Enfin un granola healthy et marocain. Le premium est parfait, plein de fruits secs. Je recommande à 100%.", n: "Imane K.", city: "Agadir", i: "IK", c: "bg-[#C9893A]" },
-  { q: "Produit premium, service au top. Commande reçue en 2 jours à Fès, tout était parfait.", n: "Hajar R.", city: "Fès", i: "HR", c: "bg-[#2F6E57]" },
+  { q: "Wellah ila ldid ! Croustillant bzaf et pas trop sucré — exactement ce que je cherchais. Mes enfants kaytsennaw le petit-déj daba 😋", n: "Fatima Z.", city: "Casablanca", i: "FZ", c: "bg-[#2F6E57]" },
+  { q: "Khedma nqiya w propre. La commande wseltni f youmayn l Rabat, emballage soigné. Ana wlit client fidèle, nechri kol chher.", n: "Yasmine B.", city: "Rabat", i: "YB", c: "bg-[#C75B33]" },
+  { q: "Saveur miel & cannelle top ! Kayn dak ta3m dial dar, vrai fait maison. Ya salame 3la l9ima, je recommande à 100%.", n: "Imane K.", city: "Agadir", i: "IK", c: "bg-[#C9893A]" },
+  { q: "Produit premium ou service au top. Granola bla sukar raffiné, ldid f nefs lwe9t. Reçu à Fès f 2 jours, kollchi nqi.", n: "Hajar R.", city: "Fès", i: "HR", c: "bg-[#2F6E57]" },
 ];
 
 const Check = () => (
@@ -57,9 +56,9 @@ export default function Testimonials() {
           </article>
         </Reveal>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-[920px] mx-auto">
           {reviews.map((r, i) => (
-            <Reveal key={r.n} delay={(i % 3) * 80} className="h-full">
+            <Reveal key={r.n} delay={(i % 2) * 80} className="h-full">
               <article className="h-full bg-cream border border-primary/10 rounded-[26px] p-7 shadow-[0_4px_14px_rgba(33,30,24,.06)] flex flex-col gap-[.9rem]">
                 <div className="text-[#E2A93B] tracking-[1.5px]">★★★★★</div>
                 <blockquote className="text-[1.02rem] text-ink leading-relaxed flex-1">&ldquo;{r.q}&rdquo;</blockquote>
