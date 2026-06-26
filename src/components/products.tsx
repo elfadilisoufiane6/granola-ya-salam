@@ -103,13 +103,13 @@ export default function Products({ showHeader = true, detailed = false }: { show
             sub="Disponible de 250g à 1 Kg — prix dégressifs. Le petit-déjeuner idéal pour toute la famille."
           />
         )}
-        <div className={`grid ${detailed ? "gap-x-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-10" : "gap-6 grid-cols-1 sm:grid-cols-2 max-w-[920px] mx-auto"}`}>
+        <div className={`grid ${detailed ? "gap-x-10 gap-y-12 grid-cols-1 sm:grid-cols-2 max-w-[940px] mx-auto" : "gap-6 grid-cols-1 sm:grid-cols-2 max-w-[920px] mx-auto"}`}>
           {products.map((p, i) => (
             <Reveal key={p.slug} delay={i * 100} className="h-full">
               {detailed ? (
                 <article className="flex flex-col h-full group">
                   <div className="relative aspect-square overflow-hidden bg-light/50 rounded-[20px]">
-                    <Image src={p.img} alt={p.alt} fill sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 25vw" className="object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.04]" />
+                    <Image src={p.img} alt={p.alt} fill sizes="(max-width:640px) 100vw, 470px" className="object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.04]" />
                     {p.badge && (
                       <span className={`absolute top-4 left-4 ${p.badge.bg} text-white text-[.7rem] font-bold tracking-[.4px] uppercase px-3 py-1.5 rounded-full`}>
                         {p.badge.text}
