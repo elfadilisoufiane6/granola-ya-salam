@@ -43,8 +43,9 @@ function BoldCard({ p }: { p: Product }) {
           {p.subtitle && (
             <p className="font-accent text-accent text-[1.15rem] leading-none mt-0.5 drop-shadow-[0_1px_6px_rgba(0,0,0,.4)]">{p.subtitle}</p>
           )}
-          <p className="mt-2 text-white/95 font-display font-semibold text-[1.15rem] drop-shadow-[0_1px_8px_rgba(0,0,0,.4)]">
-            dès {p.prices[0][1]}
+          <p className="mt-2 text-white font-display font-semibold text-[1.3rem] drop-shadow-[0_1px_8px_rgba(0,0,0,.4)]">
+            {p.prices[p.prices.length - 1][1]}
+            <span className="ml-1.5 font-body font-medium text-[.8rem] text-white/85">le 1 Kg</span>
           </p>
         </div>
 
