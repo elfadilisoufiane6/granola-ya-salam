@@ -3,7 +3,7 @@ import Link from "next/link";
 import Reveal from "./reveal";
 import SectionHead from "./section-head";
 import Btn, { btnClass } from "./btn";
-import { products, type Product } from "@/lib/catalog";
+import { products, qualityPoints, type Product, type PriceRow } from "@/lib/catalog";
 
 function CartIcon() {
   return (
@@ -43,9 +43,12 @@ function BoldCard({ p }: { p: Product }) {
           {p.subtitle && (
             <p className="font-accent text-accent text-[1.15rem] leading-none mt-0.5 drop-shadow-[0_1px_6px_rgba(0,0,0,.4)]">{p.subtitle}</p>
           )}
-          <p className="mt-2 text-white font-display font-semibold text-[1.3rem] drop-shadow-[0_1px_8px_rgba(0,0,0,.4)]">
-            {p.prices[p.prices.length - 1][1]}
-            <span className="ml-1.5 font-body font-medium text-[.8rem] text-white/85">le 1 Kg</span>
+          <p className="mt-2 flex items-baseline gap-1.5 drop-shadow-[0_1px_8px_rgba(0,0,0,.4)]">
+            {p.prices[p.prices.length - 1][2] && (
+              <span className="font-body font-medium text-[.85rem] text-white/70 line-through">{p.prices[p.prices.length - 1][2]}</span>
+            )}
+            <span className="text-white font-display font-semibold text-[1.3rem]">{p.prices[p.prices.length - 1][1]}</span>
+            <span className="font-body font-medium text-[.8rem] text-white/85">le 1 Kg</span>
           </p>
         </div>
 
@@ -62,14 +65,14 @@ function BoldCard({ p }: { p: Product }) {
   );
 }
 
-function PriceTable({ prices }: { prices: [string, string][] }) {
+function PriceTable({ prices }: { prices: PriceRow[] }) {
   return (
     <div className="mt-3 mb-4">
       <div className="flex items-center justify-between pb-1.5 text-[.66rem] font-semibold uppercase tracking-[.12em] text-muted/70">
         <span>Format</span>
-        <span>Prix</span>
+        <span>Prix de lancement</span>
       </div>
-      {prices.map(([g, p], i) => {
+      {prices.map(([g, p, old], i) => {
         const best = i === prices.length - 1;
         return (
           <div
@@ -84,7 +87,10 @@ function PriceTable({ prices }: { prices: [string, string][] }) {
                 </span>
               )}
             </span>
-            <span className={`font-display font-semibold ${best ? "text-[1.05rem] text-primary" : "text-[.98rem] text-ink/80"}`}>{p}</span>
+            <span className="flex items-baseline gap-1.5">
+              {old && <span className="text-[.78rem] text-muted/60 line-through">{old}</span>}
+              <span className={`font-display font-semibold ${best ? "text-[1.05rem] text-primary" : "text-[.98rem] text-ink/80"}`}>{p}</span>
+            </span>
           </div>
         );
       })}
@@ -121,11 +127,23 @@ export default function Products({ showHeader = true, detailed = false }: { show
                     {p.subtitle && <p className="font-accent text-accent leading-none mt-1 text-[1.15rem]">{p.subtitle}</p>}
                     {p.tagline && <p className="mt-2 text-[.95rem] font-semibold text-ink leading-snug">{p.tagline}</p>}
                     <p className="text-muted mt-1.5 text-[.88rem]">{p.desc}</p>
-                    {p.forWho && (
-                      <p className="mt-2.5 text-[.8rem] text-primary leading-snug">
-                        <span className="font-semibold">Pour qui ?</span> {p.forWho}
+                    {p.idealWith && (
+                      <p className="mt-2.5 text-[.82rem] text-ink/75 leading-snug">
+                        <span className="font-semibold text-ink">Idéal avec :</span> {p.idealWith}
                       </p>
                     )}
+                    {p.ingredients && (
+                      <p className="mt-1.5 text-[.78rem] text-muted leading-snug">
+                        <span className="font-semibold text-ink/70">Ingrédients :</span> {p.ingredients}
+                      </p>
+                    )}
+                    <ul className="flex flex-wrap gap-x-3 gap-y-1 mt-3 text-[.76rem] font-semibold text-primary">
+                      {qualityPoints.map((q) => (
+                        <li key={q} className="inline-flex items-center gap-1">
+                          <span aria-hidden="true">✓</span> {q}
+                        </li>
+                      ))}
+                    </ul>
                     <div className="flex-1" />
                     <PriceTable prices={p.prices} />
                     {p.priceNote && (

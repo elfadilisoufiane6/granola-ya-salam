@@ -9,7 +9,7 @@ import Btn from "@/components/btn";
 export const metadata: Metadata = {
   title: "Nos saveurs",
   description:
-    "Découvrez les 4 saveurs de granola artisanal Granola Ya Salame : Classique, Marocain (amlou), Chocolat-Noisettes et Tropical. Fait main à Casablanca, sans conservateur.",
+    "Découvrez les 4 saveurs de granola artisanal Granola Ya Salame : Premium, Miel & Cannelle, Chocolat et Classique. Fait main à Casablanca, sans sucre raffiné ni conservateur. Livraison 24–48h partout au Maroc.",
 };
 
 export default function NosSaveursPage() {

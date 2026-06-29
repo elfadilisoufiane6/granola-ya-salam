@@ -4,9 +4,9 @@ import { useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { btnClass } from "./btn";
 import { waLink } from "@/lib/site";
-import { products } from "@/lib/catalog";
+import { products, type PriceRow } from "@/lib/catalog";
 
-type Row = [string, string];
+type Row = PriceRow;
 
 const flavorOptions: { label: string; slug: string; prices: Row[] | null }[] = [
   ...products.map((p) => ({

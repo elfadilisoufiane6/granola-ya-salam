@@ -3,7 +3,7 @@ import SectionHead from "./section-head";
 
 const cards = [
   { ico: "🍯", t: "Sucré au miel, jamais au sucre blanc", p: "Zéro sucre raffiné, zéro sirop industriel. La douceur vient du miel naturel et des fruits secs. Point." },
-  { ico: "👩‍🍳", t: "Fait main par Khadija, à Casablanca", p: "Chaque fournée sort de sa cuisine, en petites quantités. Pas d'usine, pas de tapis roulant." },
+  { ico: "👩‍🍳", t: "Fait main par Khaoula, à Casablanca", p: "Chaque fournée sort de sa cuisine, en petites quantités. Pas d'usine, pas de tapis roulant." },
   { ico: "📅", t: "Préparé peu et souvent", p: "On torréfie en petites séries. Le sachet que vous recevez a quelques jours — pas un an de stock." },
   { ico: "🥜", t: "Généreux en fruits secs", p: "On ne remplit pas le sachet d'avoine bon marché. Les amandes, noix et graines, vous les voyez et vous les croquez." },
   { ico: "🇲🇦", t: "Pensé pour le goût marocain", p: "Cannelle, miel, recettes qui rappellent le petit-déj de la maison. Healthy, mais jamais fade." },

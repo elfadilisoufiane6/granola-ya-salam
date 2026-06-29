@@ -3,6 +3,7 @@ import Link from "next/link";
 import Btn, { btnClass } from "./btn";
 import Reveal from "./reveal";
 import UrgencyBadge from "./urgency-badge";
+import DeliveryRates from "./delivery-rates";
 
 const avatars = [
   { i: "FZ", c: "bg-[#2F6E57]" },
@@ -82,10 +83,10 @@ export default function Hero() {
               Le granola qui <span className="text-accent italic">change ton matin</span>
             </h1>
             <p className="font-accent text-[clamp(1.5rem,3vw,2.1rem)] text-secondary mt-2 font-bold">
-              Le plaisir sain, partagé avec amour 🇲🇦
+              Le plaisir sain, fait avec amour — livré chez toi 🇲🇦
             </p>
             <p className="text-[1.15rem] text-muted max-w-[33rem] mt-[1.3rem] mb-3">
-              Granola artisanal marocain — sans sucre raffiné, sans conservateurs, plein de fruits secs croustillants. Le petit-déjeuner idéal pour toute la famille.
+              Granola artisanal marocain, préparé avec soin. Sans sucre raffiné, sans conservateurs — juste du bon, croquant et naturel, pour toute la famille.
             </p>
             <p className="text-[1.15rem] text-ink font-semibold mb-[1.3rem]">
               À partir de <span className="text-primary">45 DH</span> · Livraison 24–48h partout au Maroc
@@ -107,6 +108,7 @@ export default function Hero() {
                 <span className="text-[#E2A93B] tracking-[1px]">★★★★★</span> <b>4.9/5</b> — 800+ clients satisfaits
               </div>
             </div>
+            <DeliveryRates className="mt-7 max-w-[27rem]" />
           </Reveal>
         </div>
       </section>

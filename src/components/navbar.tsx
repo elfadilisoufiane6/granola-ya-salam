@@ -70,8 +70,10 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 inset-x-0 z-[100] h-[78px] flex items-center transition-[background,box-shadow] duration-300 ${
-          scrolled || open ? "bg-cream/90 backdrop-blur-[10px] shadow-[0_4px_14px_rgba(33,30,24,.06)]" : "bg-transparent"
+        className={`fixed top-0 inset-x-0 z-[100] h-[78px] flex items-center backdrop-blur-[10px] transition-[background,box-shadow] duration-300 ${
+          scrolled || open
+            ? "bg-cream/95 shadow-[0_4px_14px_rgba(33,30,24,.08)]"
+            : "bg-cream/80 shadow-[0_1px_0_rgba(33,30,24,.05)]"
         }`}
       >
         <div className="container-x flex items-center justify-between">
@@ -79,11 +81,21 @@ export default function Navbar() {
 
         {/* desktop nav */}
         <nav className="hidden md:flex items-center gap-[1.9rem]" aria-label="Navigation principale">
-          {links.map((l) => (
-            <Link key={l.href} href={l.href} className="text-[.97rem] font-medium text-ink transition-colors hover:text-primary">
-              {l.label}
-            </Link>
-          ))}
+          {links.map((l) => {
+            const active = pathname === l.href;
+            return (
+              <Link
+                key={l.href}
+                href={l.href}
+                aria-current={active ? "page" : undefined}
+                className={`relative text-[1rem] font-semibold transition-colors hover:text-primary after:absolute after:left-0 after:-bottom-1.5 after:h-[2px] after:rounded-full after:bg-primary after:transition-all after:duration-300 ${
+                  active ? "text-primary after:w-full" : "text-ink after:w-0 hover:after:w-full"
+                }`}
+              >
+                {l.label}
+              </Link>
+            );
+          })}
           <Link href="/commander" className={navBtn}>Commander</Link>
         </nav>
 

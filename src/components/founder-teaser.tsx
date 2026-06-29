@@ -10,7 +10,7 @@ export default function FounderTeaser() {
           <div className="relative w-[120px] h-[120px] shrink-0 rounded-full overflow-hidden ring-4 ring-cream shadow-[0_12px_30px_-8px_rgba(33,30,24,.25)]">
             <Image
               src="/images/pack-1.jfif"
-              alt="Khadija, fondatrice de Granola Ya Salame, prépare le granola à la main dans sa cuisine à Casablanca"
+              alt="Khaoula, fondatrice de Granola Ya Salame, prépare le granola à la main dans sa cuisine à Casablanca"
               fill
               sizes="120px"
               className="object-cover"
@@ -19,7 +19,7 @@ export default function FounderTeaser() {
           <div>
             <p className="font-accent text-primary text-[1.4rem] leading-none mb-1">Fait main, avec amour</p>
             <p className="text-[1.3rem] text-ink leading-snug">
-              Fabriqué par Khadija, dans sa cuisine à Casablanca.
+              Fabriqué par Khaoula, dans sa cuisine à Casablanca.
             </p>
             <Link
               href="/notre-histoire"

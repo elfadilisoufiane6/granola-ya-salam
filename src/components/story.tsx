@@ -5,20 +5,20 @@ export default function Story({ className = "py-24 bg-light scroll-mt-[78px]" }:
   return (
     <section id="story" className={className}>
       <div className="container-x grid md:grid-cols-[0.9fr_1.1fr] gap-14 md:gap-16 items-center">
-        {/* Founder photo — placeholder, à remplacer par une vraie photo de Khadija */}
+        {/* Founder photo — placeholder, à remplacer par une vraie photo de Khaoula */}
         <Reveal className="relative">
           <figure className="relative">
             <div className="relative aspect-[4/5] rounded-[34px] overflow-hidden shadow-[0_26px_64px_rgba(33,30,24,.18)]">
               <Image
                 src="/images/pack-1.jfif"
-                alt="Khadija, fondatrice de Granola Ya Salame, prépare le granola à la main à Casablanca"
+                alt="Khaoula, fondatrice de Granola Ya Salame, prépare le granola à la main à Casablanca"
                 fill
                 sizes="(max-width:768px) 90vw, 40vw"
                 className="object-cover"
               />
             </div>
             <figcaption className="absolute -bottom-5 left-4 right-8 bg-cream rounded-[18px] shadow-[0_12px_32px_rgba(33,30,24,.12)] px-5 py-3.5">
-              <span className="font-accent text-[1.5rem] text-primary leading-none block">Khadija, fondatrice</span>
+              <span className="font-accent text-[1.5rem] text-primary leading-none block">Khaoula, fondatrice</span>
               <span className="text-[.92rem] text-muted">elle prépare chaque fournée à la main.</span>
             </figcaption>
           </figure>
@@ -29,7 +29,7 @@ export default function Story({ className = "py-24 bg-light scroll-mt-[78px]" }:
           <h2 className="text-[clamp(1.9rem,4vw,2.8rem)] mb-[1.1rem]">Tout a commencé dans ma cuisine</h2>
 
           <p className="text-muted text-[1.08rem] mb-4">
-            Je m&apos;appelle Khadija. Avant Granola Ya Salame, je cherchais simplement un petit-déjeuner dont je n&apos;aurais pas à me méfier — quelque chose de sain pour mes enfants, mais qu&apos;ils auraient vraiment <em>envie</em> de manger. Dans les rayons, je ne trouvais que des céréales pleines de sucre raffiné et d&apos;ingrédients dont je n&apos;arrivais même pas à lire les noms.
+            Je m&apos;appelle Khaoula. Avant Granola Ya Salame, je cherchais simplement un petit-déjeuner dont je n&apos;aurais pas à me méfier — quelque chose de sain pour mes enfants, mais qu&apos;ils auraient vraiment <em>envie</em> de manger. Dans les rayons, je ne trouvais que des céréales pleines de sucre raffiné et d&apos;ingrédients dont je n&apos;arrivais même pas à lire les noms.
           </p>
           <p className="text-muted text-[1.08rem] mb-4">
             Alors un matin, je me suis dit&nbsp;: et si je le faisais moi-même&nbsp;? J&apos;ai sorti mon four, de l&apos;avoine, du miel, quelques amandes. Mes premières fournées étaient… disons honnêtes&nbsp;: trop cuites, trop sucrées, parfois carrément ratées. Mais à chaque essai, j&apos;ajustais. Une cuillère de miel en moins, quelques minutes de cuisson en plus.
@@ -47,7 +47,7 @@ export default function Story({ className = "py-24 bg-light scroll-mt-[78px]" }:
           </p>
 
           <p className="font-accent text-[2rem] text-primary">
-            — Khadija
+            — Khaoula
             <small className="block font-body not-italic text-[.9rem] text-muted">Fondatrice, Granola Ya Salame</small>
           </p>
         </Reveal>
