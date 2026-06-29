@@ -32,7 +32,7 @@ export const products: Product[] = [
     slug: "premium",
     name: "Granola Premium",
     subtitle: "Fruits Secs & Graines",
-    img: "/images/produit-2.webp",
+    img: "/images/produit-2.png",
     alt: "Granola Premium aux amandes, noix de cajou, pistaches, noisettes et graines — Granola Ya Salame",
     tagline: "Quand le granola devient une expérience.",
     desc: "Notre fierté. Des ingrédients rares, triés un par un, et des saveurs complexes qui se révèlent à chaque bouchée. Croustillant jusqu'à la dernière cuillère — pour celles et ceux qui ne font aucun compromis sur la qualité.",
@@ -45,7 +45,7 @@ export const products: Product[] = [
   {
     slug: "miel",
     name: "Granola Miel & Cannelle",
-    img: "/images/produit-1.webp",
+    img: "/images/produit-1.png",
     alt: "Granola au miel naturel et cannelle avec amandes et raisins secs — Granola Ya Salame",
     tagline: "La douceur qui réchauffe.",
     desc: "Le miel qui caramélise doucement, la cannelle qui réchauffe de l'intérieur — une combinaison intemporelle qui sent bon le matin. Réconfortant, naturel, et irrésistiblement parfumé. Ça sent le petit-déj du dimanche chez mama, sauf que là, c'est sain.",
@@ -57,7 +57,7 @@ export const products: Product[] = [
   {
     slug: "chocolat",
     name: "Granola Chocolat",
-    img: "/images/produit-3.webp",
+    img: "/images/produit-3.png",
     alt: "Granola au chocolat noir avec amandes et noix de cajou — Granola Ya Salame",
     tagline: "Pour les gourmands, sans culpabilité.",
     desc: "Un granola généreux et intense, avec de vrais éclats de cacao. Croquant à souhait, naturellement sucré, il transforme chaque petit-déjeuner en moment de plaisir. Juste le vrai goût du chocolat — personne ne devinera que c'est healthy.",
@@ -69,7 +69,7 @@ export const products: Product[] = [
   {
     slug: "classique",
     name: "Granola Classique",
-    img: "/images/produit-4.webp",
+    img: "/images/produit-4.png",
     alt: "Granola classique avoine, amandes, noix, raisins secs et graines — Granola Ya Salame",
     tagline: "Le retour à l'essentiel.",
     desc: "Flocons dorés, graines croquantes, saveur authentique. Le Granola Classique, c'est la base parfaite — celle qui se marie avec tout et qui ne déçoit jamais. Simple, honnête, délicieux, et jamais trop sucré.",
