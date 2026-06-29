@@ -3,7 +3,6 @@ import Link from "next/link";
 import Btn, { btnClass } from "./btn";
 import Reveal from "./reveal";
 import UrgencyBadge from "./urgency-badge";
-import DeliveryRates from "./delivery-rates";
 
 const avatars = [
   { i: "FZ", c: "bg-[#2F6E57]" },
@@ -108,7 +107,6 @@ export default function Hero() {
                 <span className="text-[#E2A93B] tracking-[1px]">★★★★★</span> <b>4.9/5</b> — 800+ clients satisfaits
               </div>
             </div>
-            <DeliveryRates className="mt-7 max-w-[27rem]" />
           </Reveal>
         </div>
       </section>

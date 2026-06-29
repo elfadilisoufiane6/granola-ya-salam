@@ -52,11 +52,18 @@ function BoldCard({ p }: { p: Product }) {
           </p>
         </div>
 
-        {/* floating add-to-cart icon button bottom-right */}
+        {/* whole card → Nos saveurs */}
+        <Link
+          href="/nos-saveurs"
+          aria-label={`Voir ${p.name} dans Nos saveurs`}
+          className="absolute inset-0 z-[1]"
+        />
+
+        {/* floating add-to-cart icon button bottom-right (sits above the card link) */}
         <Link
           href={`/commander?saveur=${p.slug}`}
           aria-label={`Commander ${p.name}`}
-          className="absolute bottom-4 right-4 grid place-items-center w-12 h-12 rounded-full bg-primary text-white shadow-[0_8px_20px_-4px_rgba(47,110,87,.6)] ring-1 ring-white/20 transition-transform duration-200 hover:scale-110 active:scale-95"
+          className="absolute bottom-4 right-4 z-[2] grid place-items-center w-12 h-12 rounded-full bg-primary text-white shadow-[0_8px_20px_-4px_rgba(47,110,87,.6)] ring-1 ring-white/20 transition-transform duration-200 hover:scale-110 active:scale-95"
         >
           <CartIcon />
         </Link>

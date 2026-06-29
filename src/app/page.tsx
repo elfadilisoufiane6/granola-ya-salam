@@ -2,6 +2,7 @@ import Hero from "@/components/hero";
 import Marquee from "@/components/marquee";
 import Stats from "@/components/stats";
 import Products from "@/components/products";
+import Delivery from "@/components/delivery";
 import FounderTeaser from "@/components/founder-teaser";
 import Testimonials from "@/components/testimonials";
 import CtaBand from "@/components/cta-band";
@@ -15,6 +16,7 @@ export default function Home() {
       <Marquee />
       <Stats />
       <Products />
+      <Delivery />
       <ParallaxBanner />
       <Testimonials />
       <FounderTeaser />
