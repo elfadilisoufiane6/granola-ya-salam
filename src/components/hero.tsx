@@ -37,7 +37,7 @@ export default function Hero() {
             Sans sucre raffiné · sans conservateurs · 100% artisanal 🇲🇦
           </p>
           <p className="text-[.95rem] text-ink font-semibold mt-2">
-            À partir de <span className="text-primary">45 DH</span> · Livraison 24–48h partout au Maroc
+            À partir de <span className="text-primary">25 DH</span> · Livraison 24–48h partout au Maroc
           </p>
           <div className="flex justify-center mt-3">
             <UrgencyBadge />
@@ -88,7 +88,7 @@ export default function Hero() {
               Granola artisanal marocain, préparé avec soin. Sans sucre raffiné, sans conservateurs — juste du bon, croquant et naturel, pour toute la famille.
             </p>
             <p className="text-[1.15rem] text-ink font-semibold mb-[1.3rem]">
-              À partir de <span className="text-primary">45 DH</span> · Livraison 24–48h partout au Maroc
+              À partir de <span className="text-primary">25 DH</span> · Livraison 24–48h partout au Maroc
             </p>
             <div className="flex flex-wrap gap-4 items-center">
               <Btn href="/commander" variant="whatsapp" size="lg">Commander maintenant</Btn>
