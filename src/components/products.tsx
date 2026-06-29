@@ -116,20 +116,20 @@ export default function Products({ showHeader = true, detailed = false }: { show
             sub="Disponible de 250g à 1 Kg — prix dégressifs. Le petit-déjeuner idéal pour toute la famille."
           />
         )}
-        <div className={`grid ${detailed ? "gap-x-10 gap-y-12 grid-cols-1 sm:grid-cols-2 max-w-[940px] mx-auto" : "gap-6 grid-cols-1 sm:grid-cols-2 max-w-[920px] mx-auto"}`}>
+        <div className={detailed ? "flex flex-col gap-12 md:gap-16 max-w-[1000px] mx-auto" : "grid gap-6 grid-cols-1 sm:grid-cols-2 max-w-[920px] mx-auto"}>
           {products.map((p, i) => (
             <Reveal key={p.slug} delay={i * 100} className="h-full">
               {detailed ? (
-                <article className="flex flex-col h-full group">
-                  <div className="relative aspect-square overflow-hidden bg-light/50 rounded-[20px]">
-                    <Image src={p.img} alt={p.alt} fill sizes="(max-width:640px) 100vw, 470px" className="object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.04]" />
+                <article className="flex flex-col md:flex-row gap-6 md:gap-10 items-stretch group">
+                  <div className="relative w-full md:w-[42%] md:shrink-0 aspect-square md:aspect-auto md:min-h-[330px] overflow-hidden bg-light/50 rounded-[20px]">
+                    <Image src={p.img} alt={p.alt} fill sizes="(max-width:768px) 100vw, 420px" className="object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.04]" />
                     {p.badge && (
                       <span className={`absolute top-4 left-4 ${p.badge.bg} text-white text-[.7rem] font-bold tracking-[.4px] uppercase px-3 py-1.5 rounded-full`}>
                         {p.badge.text}
                       </span>
                     )}
                   </div>
-                  <div className="flex flex-col flex-1 pt-[1.1rem]">
+                  <div className="flex flex-col flex-1 md:py-1">
                     <h3 className="leading-tight text-[1.2rem]">{p.name}</h3>
                     {p.subtitle && <p className="font-accent text-accent leading-none mt-1 text-[1.15rem]">{p.subtitle}</p>}
                     {p.tagline && <p className="mt-2 text-[.95rem] font-semibold text-ink leading-snug">{p.tagline}</p>}
