@@ -63,8 +63,8 @@ export default function Hero() {
       <section className="hidden md:flex relative min-h-[100svh] items-center pt-[calc(78px+2rem)] pb-12 overflow-hidden isolate">
         {/* full-bleed image */}
         <Image
-          src="/images/hero-full.png"
-          alt="Famille marocaine partageant un petit-déjeuner avec le granola artisanal Granola Ya Salame — sain et fait main à Casablanca"
+          src="/images/hero-full.webp"
+          alt="Bols de granola artisanal Granola Ya Salame aux fruits secs et miel — petit-déjeuner sain fait main à Casablanca"
           fill
           priority
           sizes="100vw"
