@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/page-hero";
 import Products from "@/components/products";
+import SaveursBanner from "@/components/saveurs-banner";
 import Why from "@/components/why";
 import SaveursReviews from "@/components/saveurs-reviews";
 import CtaBand from "@/components/cta-band";
@@ -20,6 +21,7 @@ export default function NosSaveursPage() {
         sub="Quatre recettes faites main à Casablanca — croustillant, naturel, et plein de goût."
       />
       <Products showHeader={false} detailed />
+      <SaveursBanner />
       <Why />
       <SaveursReviews />
       <CtaBand
