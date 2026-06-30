@@ -65,7 +65,7 @@ export default function Navbar() {
   }, [open]);
 
   const navBtn =
-    "inline-flex items-center justify-center rounded-full bg-cta text-white font-semibold text-[.92rem] px-5 py-2.5 transition-colors hover:bg-cta-d";
+    "cta-anim inline-flex items-center justify-center rounded-full bg-cta text-white font-semibold text-[.92rem] px-5 py-2.5 transition-colors hover:bg-cta-d";
 
   return (
     <>
@@ -171,7 +171,7 @@ export default function Navbar() {
           <Link
             href="/commander"
             onClick={() => setOpen(false)}
-            className="mt-8 flex items-center justify-center gap-2 w-full rounded-full bg-cta text-white font-semibold text-[1rem] py-3.5 shadow-[0_10px_24px_-8px_rgba(199,91,51,.6)] transition-colors hover:bg-cta-d"
+            className="cta-anim mt-8 flex items-center justify-center gap-2 w-full rounded-full bg-cta text-white font-semibold text-[1rem] py-3.5 shadow-[0_10px_24px_-8px_rgba(199,91,51,.6)] transition-colors hover:bg-cta-d"
           >
             🛒 Commander maintenant
           </Link>

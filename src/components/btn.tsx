@@ -9,7 +9,7 @@ const base =
 
 const variants: Record<Variant, string> = {
   whatsapp:
-    "bg-cta text-white shadow-[0_8px_22px_rgba(199,91,51,.32)] hover:bg-cta-d hover:-translate-y-0.5",
+    "cta-anim bg-cta text-white shadow-[0_8px_22px_rgba(199,91,51,.32)] hover:bg-cta-d hover:-translate-y-0.5",
   primary:
     "bg-primary text-white shadow-[0_8px_22px_rgba(47,110,87,.30)] hover:bg-primary-d hover:-translate-y-0.5",
   ghost:
