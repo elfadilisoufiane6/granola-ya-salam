@@ -35,7 +35,7 @@ export default function Delivery() {
         <Reveal className="max-w-[920px] mx-auto mt-6">
           <div className="flex items-center justify-center gap-2.5 text-center rounded-[20px] bg-primary text-white px-6 py-4 font-semibold text-[clamp(.98rem,2.4vw,1.1rem)] shadow-[0_18px_40px_-26px_rgba(47,110,87,.8)]">
             <span aria-hidden="true">🎁</span>
-            <span>Livraison <span className="text-accent">offerte</span> dès 150 DH d&apos;achat</span>
+            <span>Livraison <span className="text-accent">offerte</span> dès 250 DH d&apos;achat</span>
           </div>
         </Reveal>
       </div>
