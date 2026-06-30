@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     template: "%s · Granola Ya Salame",
   },
   description:
-    "Granola artisanal marocain, healthy et fait main à Casablanca. Sans sucre raffiné, sans conservateurs. Noté 4.9/5 par 800+ clients. Livraison partout au Maroc en 24–48h.",
+    "Granola artisanal marocain, healthy et fait main à Casablanca. Sans conservateurs. Noté 4.9/5 par 800+ clients. Livraison partout au Maroc en 24–48h.",
   openGraph: {
     type: "website",
     locale: "fr_MA",

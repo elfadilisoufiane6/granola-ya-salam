@@ -13,8 +13,8 @@ const featured = {
 const reviews = [
   { q: "Wellah ila ldid ! Croustillant bzaf et pas trop sucré — exactement ce que je cherchais. Mes enfants kaytsennaw le petit-déj daba 😋", n: "Fatima Z.", city: "Casablanca", i: "FZ", c: "bg-[#2F6E57]" },
   { q: "Khedma nqiya w propre. La commande wseltni f youmayn l Rabat, emballage soigné. Ana wlit client fidèle, nechri kol chher.", n: "Yasmine B.", city: "Rabat", i: "YB", c: "bg-[#C75B33]" },
-  { q: "Saveur miel & cannelle top ! Kayn dak ta3m dial dar, vrai fait maison. Ya salame 3la l9ima, je recommande à 100%.", n: "Imane K.", city: "Agadir", i: "IK", c: "bg-[#C9893A]" },
-  { q: "Produit premium ou service au top. Granola bla sukar raffiné, ldid f nefs lwe9t. Reçu à Fès f 2 jours, kollchi nqi.", n: "Hajar R.", city: "Fès", i: "HR", c: "bg-[#2F6E57]" },
+  { q: "Saveur miel & cannelle top ! Kayn dak ta3m dial dar, vrai fait maison. Ya salame 3la granola ya salame, je recommande à 100%.", n: "Imane K.", city: "Agadir", i: "IK", c: "bg-[#C9893A]" },
+  { q: "Produit premium ou service au top. Granola naturel, ldid f nefs lwe9t. Reçu à Fès f 2 jours, kollchi nqi.", n: "Hajar R.", city: "Fès", i: "HR", c: "bg-[#2F6E57]" },
 ];
 
 const Check = () => (

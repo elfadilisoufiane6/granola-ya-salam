@@ -22,7 +22,7 @@ export type Product = {
 
 /** Garanties communes à toutes les saveurs. */
 export const qualityPoints = [
-  "Sans sucre raffiné",
+  "100% naturel",
   "Sans conservateurs",
   "Fait avec amour",
 ];

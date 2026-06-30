@@ -18,14 +18,14 @@ export default function FounderTeaser() {
           </div>
           <div>
             <p className="font-accent text-primary text-[1.4rem] leading-none mb-1">Fait main, avec amour</p>
-            <p className="text-[1.3rem] text-ink leading-snug">
-              Fabriqué par Khaoula, dans sa cuisine à Casablanca.
+            <p className="text-[1.15rem] text-ink leading-snug">
+              Chaque fournée est préparée par Khaoula à la commande pour vous garantir une fraîcheur absolue. Commandez le vôtre dès aujourd&apos;hui&nbsp;!
             </p>
             <Link
-              href="/notre-histoire"
+              href="/nos-saveurs"
               className="inline-flex items-center gap-1.5 mt-3 font-semibold text-secondary hover:text-cta transition-colors"
             >
-              Découvrir notre histoire →
+              Voir les variétés disponibles →
             </Link>
           </div>
         </Reveal>

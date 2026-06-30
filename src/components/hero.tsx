@@ -34,7 +34,7 @@ export default function Hero() {
             Le granola qui <span className="text-accent italic">change ton matin</span>
           </h1>
           <p className="text-[.98rem] text-muted font-medium mt-2.5">
-            Sans sucre raffiné · sans conservateurs · 100% artisanal 🇲🇦
+            Sans conservateurs · 100% artisanal 🇲🇦
           </p>
           <p className="text-[.95rem] text-ink font-semibold mt-2">
             À partir de <span className="text-primary">25 DH</span> · Livraison 24–48h partout au Maroc
@@ -85,7 +85,7 @@ export default function Hero() {
               Le plaisir sain, fait avec amour — livré chez toi 🇲🇦
             </p>
             <p className="text-[1.15rem] text-muted max-w-[33rem] mt-[1.3rem] mb-3">
-              Granola artisanal marocain, préparé avec soin. Sans sucre raffiné, sans conservateurs — juste du bon, croquant et naturel, pour toute la famille.
+              Granola artisanal marocain, préparé avec soin. Sans conservateurs — juste du bon, croquant et naturel, pour toute la famille.
             </p>
             <p className="text-[1.15rem] text-ink font-semibold mb-[1.3rem]">
               À partir de <span className="text-primary">25 DH</span> · Livraison 24–48h partout au Maroc

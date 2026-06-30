@@ -12,9 +12,9 @@ export default function ParallaxBanner() {
       <div className="absolute inset-0 bg-[radial-gradient(70%_70%_at_50%_50%,rgba(250,246,238,.62),rgba(250,246,238,.18))]" />
       <Reveal className="relative container-x py-20">
         <span className="font-accent text-primary text-[2rem] block leading-none mb-2">Granola Ya Salame</span>
-        <h2 className="text-[clamp(2rem,5vw,3.4rem)] text-ink mx-auto max-w-[16ch]">Que du bon, dans chaque bol.</h2>
-        <p className="text-muted text-[1.1rem] mt-3 mb-7 mx-auto max-w-[34rem]">
-          Avoine, amandes, miel, fruits secs — des ingrédients vrais, rien d&apos;autre.
+        <h2 className="text-[clamp(2rem,5vw,3.4rem)] text-ink mx-auto max-w-[20ch]">Prêt à découvrir Granola Ya Salame&nbsp;?</h2>
+        <p className="text-muted text-[1.1rem] mt-3 mb-7 mx-auto max-w-[40rem]">
+          Chaque bouchée raconte une histoire de soin, de qualité et de passion. Laissez-vous tenter par la saveur authentique.
         </p>
         <Btn href="/commander" variant="whatsapp" size="lg">Commander maintenant</Btn>
       </Reveal>

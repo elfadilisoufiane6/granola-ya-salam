@@ -29,7 +29,7 @@ export default function Story({ className = "py-24 bg-light scroll-mt-[78px]" }:
           <h2 className="text-[clamp(1.9rem,4vw,2.8rem)] mb-[1.1rem]">Tout a commencé dans ma cuisine</h2>
 
           <p className="text-muted text-[1.08rem] mb-4">
-            Je m&apos;appelle Khaoula. Avant Granola Ya Salame, je cherchais simplement un petit-déjeuner dont je n&apos;aurais pas à me méfier — quelque chose de sain pour mes enfants, mais qu&apos;ils auraient vraiment <em>envie</em> de manger. Dans les rayons, je ne trouvais que des céréales pleines de sucre raffiné et d&apos;ingrédients dont je n&apos;arrivais même pas à lire les noms.
+            Je m&apos;appelle Khaoula. Avant Granola Ya Salame, je cherchais simplement un petit-déjeuner dont je n&apos;aurais pas à me méfier — quelque chose de sain pour mes enfants, mais qu&apos;ils auraient vraiment <em>envie</em> de manger. Dans les rayons, je ne trouvais que des céréales pleines de sucre et d&apos;ingrédients dont je n&apos;arrivais même pas à lire les noms.
           </p>
           <p className="text-muted text-[1.08rem] mb-4">
             Alors un matin, je me suis dit&nbsp;: et si je le faisais moi-même&nbsp;? J&apos;ai sorti mon four, de l&apos;avoine, du miel, quelques amandes. Mes premières fournées étaient… disons honnêtes&nbsp;: trop cuites, trop sucrées, parfois carrément ratées. Mais à chaque essai, j&apos;ajustais. Une cuillère de miel en moins, quelques minutes de cuisson en plus.

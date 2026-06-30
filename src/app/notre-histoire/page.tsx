@@ -9,7 +9,7 @@ import Btn from "@/components/btn";
 export const metadata: Metadata = {
   title: "Notre histoire",
   description:
-    "L'histoire de Granola Ya Salame — fondée par Khaoula dans sa cuisine à Casablanca. Un granola fait main, sans conservateurs ni sucre raffiné, préparé comme pour sa propre famille.",
+    "L'histoire de Granola Ya Salame — fondée par Khaoula dans sa cuisine à Casablanca. Un granola fait main, sans conservateurs, préparé comme pour sa propre famille.",
 };
 
 const extraFaq = [

@@ -6,7 +6,7 @@ import SectionHead from "./section-head";
 type Item = { q: string; a: string };
 
 const items: Item[] = [
-  { q: "Vos produits contiennent-ils du sucre ajouté ?", a: "Non. Nous utilisons uniquement du miel naturel comme sucrant — jamais de sucre raffiné ni de sirops industriels." },
+  { q: "Vos produits contiennent-ils du sucre ajouté ?", a: "Nous utilisons du miel naturel comme sucrant — jamais de sirops industriels." },
   { q: "Quel est le délai de livraison ?", a: "2 à 3 jours ouvrables partout au Maroc après confirmation. Les grandes villes sont souvent livrées en 24–48h." },
   { q: "Comment payer ma commande ?", a: "Paiement à la livraison (cash) ou par virement — on en discute simplement sur WhatsApp. Aucun paiement en ligne requis." },
   { q: "Comment conserver le granola ?", a: "Dans un bocal hermétique, à l'abri de l'humidité. Il reste croustillant environ 3 semaines — s'il survit aussi longtemps 😋" },
