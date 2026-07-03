@@ -43,8 +43,9 @@ export default function OrderForm() {
       `📱 Téléphone : ${v("phone")}\n` +
       `📍 Ville : ${v("city")}\n` +
       `🥣 Saveur : ${v("flavor")}\n` +
-      `⚖️ Poids & prix : ${v("variant")}\n\n` +
-      `Merci de me confirmer la disponibilité et le total. 🙏`;
+      `⚖️ Poids & prix : ${v("variant")}\n` +
+      (v("allergies") ? `⚠️ Allergies : ${v("allergies")}\n` : "") +
+      `\nMerci de me confirmer la disponibilité et le total. 🙏`;
     window.open(waLink(msg), "_blank", "noopener");
   }
 
@@ -106,6 +107,12 @@ export default function OrderForm() {
         {selected?.prices && (
           <p className="text-muted text-[.78rem] mt-1.5">Prix dégressifs : plus c&apos;est grand, plus c&apos;est avantageux 😉</p>
         )}
+      </div>
+
+      <div className="mt-4 mb-2">
+        <label htmlFor="of-allergies" className="block font-semibold text-[.9rem] mb-1.5">Allergies <span className="text-muted font-normal">(optionnel)</span></label>
+        <input id="of-allergies" name="allergies" type="text" placeholder="Ex. fruits à coque, sésame…" className={field} />
+        <p className="text-muted text-[.78rem] mt-1.5">Allergique à un ingrédient ? Indiquez-le, on en tient compte pour votre commande.</p>
       </div>
 
       <button type="submit" className={btnClass("whatsapp", "lg", "w-full mt-3")}>
