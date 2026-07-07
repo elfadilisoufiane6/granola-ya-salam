@@ -34,7 +34,7 @@ export default function Footer() {
               <Image src="/images/logo-light.webp" alt="Granola Ya Salame" width={600} height={270} className="h-12 w-auto" />
             </Link>
             <p className="text-[#b6ab98] max-w-[22rem] text-[.96rem]">
-              Granola artisanal marocain, fait maison — sans conservateurs.
+              Granola artisanal marocain, fait maison, sans conservateurs, sans sucre raffiné.
             </p>
           </div>
 
