@@ -32,7 +32,7 @@ export const products: Product[] = [
     slug: "premium",
     name: "Granola Premium",
     subtitle: "Fruits Secs & Graines",
-    img: "/images/produit-2.png",
+    img: "/images/premuim.png",
     alt: "Granola Premium aux amandes, noix de cajou, pistaches, noisettes et graines — Granola Ya Salame",
     tagline: "Le trésor de la gamme : 75% de fruits secs nobles.",
     desc: "Conçu pour les plus exigeants : nous avons inversé les règles — seulement 25% d'avoine et 75% d'ingrédients de prestige. Une véritable explosion de croquant et une densité nutritionnelle exceptionnelle dès la première cuillère.",
@@ -45,7 +45,7 @@ export const products: Product[] = [
   {
     slug: "miel",
     name: "Granola Miel & Cannelle",
-    img: "/images/produit-1.png",
+    img: "/images/miel-chanel.png",
     alt: "Granola au miel naturel et cannelle avec amandes et raisins secs — Granola Ya Salame",
     tagline: "La douceur qui réchauffe.",
     desc: "Le miel qui caramélise doucement, la cannelle qui réchauffe de l'intérieur — une combinaison intemporelle qui sent bon le matin. Réconfortant, naturel, et irrésistiblement parfumé. Ça sent le petit-déj du dimanche chez mama, sauf que là, c'est sain.",
@@ -57,7 +57,7 @@ export const products: Product[] = [
   {
     slug: "chocolat",
     name: "Granola Chocolat",
-    img: "/images/produit-3.png",
+    img: "/images/Chocolat.png",
     alt: "Granola au chocolat noir avec amandes et noix de cajou — Granola Ya Salame",
     tagline: "Pour les gourmands, sans culpabilité.",
     desc: "Un granola généreux et intense, avec de vrais éclats de cacao. Croquant à souhait, naturellement sucré, il transforme chaque petit-déjeuner en moment de plaisir. Juste le vrai goût du chocolat — personne ne devinera que c'est healthy.",
@@ -69,7 +69,7 @@ export const products: Product[] = [
   {
     slug: "classique",
     name: "Granola Classique",
-    img: "/images/produit-4.png",
+    img: "/images/Classique.png",
     alt: "Granola classique avoine, amandes, noix, raisins secs et graines — Granola Ya Salame",
     tagline: "L'équilibre quotidien : 50% avoine, 50% fruits secs & graines.",
     desc: "La recette traditionnelle et réconfortante par excellence. Un équilibre parfait de 50% de flocons d'avoine et 50% de fruits secs et graines — la base idéale de votre routine bien-être au quotidien.",
