@@ -79,3 +79,51 @@ export const products: Product[] = [
     prices: [["250g", "45 DH", "55 DH"], ["500g", "80 DH", "95 DH"], ["750g", "115 DH", "135 DH"], ["1 Kg", "150 DH", "179 DH"]],
   },
 ];
+
+/**
+ * Pack personnalisé — la cliente coche les ingrédients qu'elle veut dans son
+ * mélange, puis choisit un poids. Le total est confirmé sur WhatsApp.
+ *
+ * ⚠️ Liste à ajuster selon ce qui est réellement en stock : elle alimente à la
+ * fois les cases à cocher du formulaire et les pastilles de la carte produit.
+ */
+export const packIngredients = [
+  "Amandes",
+  "Noix de cajou",
+  "Pistaches",
+  "Noisettes",
+  "Chocolat noir",
+  "Raisins secs",
+  "Cranberries",
+  "Noix de coco",
+  "Graines (courge, tournesol, sésame)",
+  "Dattes",
+];
+
+/**
+ * Métadonnées de la carte « Pack personnalisé », présentée comme un produit à
+ * côté des saveurs. `img` : déposer une photo du pack dans /public/images puis
+ * la référencer ici — la carte basculera automatiquement de l'habillage
+ * dégradé vers la photo.
+ */
+export const packCard: {
+  slug: string;
+  name: string;
+  subtitle: string;
+  priceFrom: string;
+  tagline: string;
+  desc: string;
+  img: string | null;
+  alt: string;
+} = {
+  slug: "pack",
+  name: "Pack personnalisé",
+  subtitle: "Compose ton mélange",
+  /** Pas de prix fixe : il dépend des ingrédients cochés, donc on ne promet
+   *  aucun montant sur la carte (le total est confirmé sur WhatsApp). */
+  priceFrom: "Prix sur mesure",
+  tagline: "Tes ingrédients, ton granola — rien de superflu.",
+  desc: "Coche les fruits secs, graines et gourmandises que tu aimes : on prépare le mélange à la main, rien que pour toi. Choisis ensuite le poids, et on te confirme le total sur WhatsApp.",
+  img: null,
+  alt: "Pack de granola personnalisé — choisis tes ingrédients",
+};
