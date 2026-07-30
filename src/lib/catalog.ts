@@ -124,6 +124,6 @@ export const packCard: {
   priceFrom: "Prix sur mesure",
   tagline: "Tes ingrédients, ton granola — rien de superflu.",
   desc: "Coche les fruits secs, graines et gourmandises que tu aimes : on prépare le mélange à la main, rien que pour toi. Choisis ensuite le poids, et on te confirme le total sur WhatsApp.",
-  img: null,
-  alt: "Pack de granola personnalisé — choisis tes ingrédients",
+  img: "/images/pack-personnalise.png",
+  alt: "Les ingrédients à composer soi-même, disposés en grille : amandes, chocolat noir, pistaches, raisins secs, graines, noix de cajou, noisettes, noix de coco, cranberries, sésame et dattes",
 };
