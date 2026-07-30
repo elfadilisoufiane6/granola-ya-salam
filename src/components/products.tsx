@@ -175,29 +175,59 @@ function CustomPackCard({ detailed = false }: { detailed?: boolean }) {
 
   return (
     <article className="group relative rounded-[16px] overflow-hidden bg-light/40 shadow-[0_18px_40px_-22px_rgba(33,30,24,.55)] ring-1 ring-ink/[.04] transition-shadow duration-300 hover:shadow-[0_26px_55px_-22px_rgba(33,30,24,.6)]">
-      <div className="relative aspect-square">
-        {packCard.img ? (
-          <Image
-            src={packCard.img}
-            alt={packCard.alt}
-            fill
-            sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw"
-            className="object-cover transition-transform duration-[700ms] ease-out group-hover:scale-[1.05]"
-          />
-        ) : (
-          <PackBackdrop compact />
-        )}
-        {/* même voile chaud que les cartes saveurs, pour la lisibilité */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(34,21,10,.72)_0%,rgba(34,21,10,.34)_36%,rgba(34,21,10,0)_66%)]" />
+      {/* Étroit (mobile) : carré, texte posé sur la photo comme les saveurs.
+          Large (sm+) : la carte occupe les deux colonnes, donc la photo carrée
+          remplit exactement la moitié gauche — aucun recadrage — et le texte
+          s'installe à droite sur un crème qui prolonge le fond de la photo. */}
+      <div className="relative aspect-square sm:aspect-[2/1]">
+        {/* panneau de droite : dégradé relevé sur le bord droit de la photo,
+            pour que la jointure ne se voie pas */}
+        <div
+          className="hidden sm:block absolute inset-y-0 left-1/2 right-0 bg-[linear-gradient(180deg,#F7F1E8_0%,#F7EEE3_25%,#F1E5D5_50%,#EFE0D1_75%,#EBDBC7_100%)]"
+          aria-hidden="true"
+        />
+
+        <div className="absolute inset-0 overflow-hidden sm:right-1/2">
+          {packCard.img ? (
+            <Image
+              src={packCard.img}
+              alt={packCard.alt}
+              fill
+              sizes="(max-width:640px) 100vw, 460px"
+              className="object-cover transition-transform duration-[700ms] ease-out group-hover:scale-[1.05]"
+            />
+          ) : (
+            <PackBackdrop compact />
+          )}
+        </div>
+
+        {/* Voile chaud seulement quand le texte est posé sur la photo. Bien plus
+            dense que sur les cartes saveurs : ce cliché est clair de bout en
+            bout, le blanc ne tient pas sur un voile léger. */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(28,18,8,.92)_0%,rgba(28,18,8,.74)_26%,rgba(28,18,8,.34)_52%,rgba(28,18,8,0)_76%)] sm:hidden" />
         {badge}
 
-        <div className="absolute inset-x-0 bottom-0 p-5 pr-20">
-          <h3 className="text-white text-[1.5rem] leading-tight drop-shadow-[0_1px_8px_rgba(0,0,0,.35)]">{packCard.name}</h3>
-          <p className="font-accent text-accent text-[1.15rem] leading-none mt-0.5 drop-shadow-[0_1px_6px_rgba(0,0,0,.4)]">{packCard.subtitle}</p>
-          <p className="mt-2 flex items-baseline gap-1.5 drop-shadow-[0_1px_8px_rgba(0,0,0,.4)]">
-            <span className="text-white font-display font-semibold text-[1.3rem]">{packCard.priceFrom}</span>
-            <span className="font-body font-medium text-[.8rem] text-white/85">confirmé sur WhatsApp</span>
+        <div className="absolute bottom-0 left-0 right-0 p-5 pr-[4.75rem] sm:top-0 sm:left-1/2 sm:flex sm:flex-col sm:justify-center sm:p-8 sm:pr-24">
+          {/* entre sm et md le panneau de droite est étroit (moitié d'une carte
+              de ~620px) : titre réduit et accroche masquée pour éviter le pavé */}
+          <h3 className="text-white text-[1.3rem] leading-tight drop-shadow-[0_1px_8px_rgba(0,0,0,.45)] sm:text-ink sm:text-[1.55rem] sm:drop-shadow-none md:text-[1.9rem]">
+            {packCard.name}
+          </h3>
+          <p className="font-accent text-accent text-[1.05rem] leading-none mt-1 drop-shadow-[0_1px_6px_rgba(0,0,0,.5)] sm:mt-1.5 sm:text-[1.25rem] sm:drop-shadow-none md:text-[1.4rem]">
+            {packCard.subtitle}
           </p>
+          <p className="hidden md:block text-muted text-[.92rem] leading-relaxed mt-3 max-w-[24rem]">
+            {packCard.tagline}
+          </p>
+          {/* en étroit la mention « confirmé sur WhatsApp » ne tient pas à côté
+              du prix : on la garde pour les écrans larges */}
+          <p className="mt-1.5 flex flex-wrap items-baseline gap-x-1.5 drop-shadow-[0_1px_8px_rgba(0,0,0,.5)] sm:mt-4 sm:drop-shadow-none">
+            <span className="text-white font-display font-semibold text-[1.05rem] sm:text-ink sm:text-[1.3rem]">{packCard.priceFrom}</span>
+            <span className="hidden sm:inline font-body font-medium text-[.8rem] text-white/85 sm:text-muted">confirmé sur WhatsApp</span>
+          </p>
+          <span className="hidden sm:inline-flex items-center gap-2 mt-5 text-[.95rem] font-bold text-primary transition-transform duration-200 group-hover:translate-x-1">
+            Composer mon pack <span aria-hidden="true">→</span>
+          </span>
         </div>
 
         {/* toute la carte mène au formulaire pré-rempli */}
@@ -278,7 +308,7 @@ export default function Products({ showHeader = true, detailed = false }: { show
               )}
             </Reveal>
           ))}
-          <Reveal delay={products.length * 100} className="h-full">
+          <Reveal delay={products.length * 100} className={detailed ? "" : "h-full sm:col-span-2"}>
             <CustomPackCard detailed={detailed} />
           </Reveal>
         </div>
