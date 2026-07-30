@@ -22,7 +22,7 @@ export default function Home() {
       <FounderTeaser />
       <CtaBand
         title="Prête à goûter le meilleur granola du Maroc ?"
-        sub="Commande en 2 minutes — la promesse de livraison en 24h–48h."
+        sub="Commande en 2 minutes — la promesse de livraison 24h–48h."
       >
         <Btn href="/commander" variant="light" size="lg">Commander maintenant 🛒</Btn>
         <Btn href="/nos-saveurs" variant="ghost" size="lg" className="text-white! border-white/50! hover:border-white! hover:text-accent!">

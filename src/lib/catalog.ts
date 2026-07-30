@@ -64,7 +64,7 @@ export const products: Product[] = [
     idealWith: "yaourt nature, lait végétal, banane fraîche",
     ingredients: "Flocons d'avoine · Éclats de cacao · Fruits secs · Miel naturel · Graines",
     badge: null,
-    prices: [["250g", "50 DH", "59 DH"], ["500g", "90 DH", "109 DH"], ["750g", "130 DH", "155 DH"], ["1 Kg", "165 DH", "195 DH"]],
+    prices: [["250g", "50 DH", "59 DH"], ["500g", "95 DH", "109 DH"], ["750g", "130 DH", "155 DH"], ["1 Kg", "180 DH", "195 DH"]],
   },
   {
     slug: "classique",
