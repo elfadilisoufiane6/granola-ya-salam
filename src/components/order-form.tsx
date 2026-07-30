@@ -8,16 +8,19 @@ import { products, type PriceRow } from "@/lib/catalog";
 
 type Row = PriceRow;
 
-const flavorOptions: { label: string; slug: string; prices: Row[] | null }[] = [
+type FlavorOption = { label: string; slug: string; prices: Row[] | null; isCustomPack?: boolean };
+
+const flavorOptions: FlavorOption[] = [
   ...products.map((p) => ({
     label: p.subtitle ? `${p.name} — ${p.subtitle}` : p.name,
     slug: p.slug,
     prices: p.prices,
   })),
-  { label: "Pack découverte", slug: "pack", prices: null },
+  { label: "Pack personnalisé", slug: "pack", prices: null, isCustomPack: true },
 ];
 
 const genericGrammages: Row[] = [["250g", ""], ["500g", ""], ["750g", ""], ["1 Kg", ""]];
+const packFormats = ["2 sachets", "3 sachets", "4 sachets", "Box cadeau (à définir avec nous)"];
 
 const field =
   "w-full px-4 py-3.5 rounded-xl border-[1.5px] border-ink/15 bg-white text-ink transition-[border-color,box-shadow] focus:outline-none focus:border-primary focus:ring-[3px] focus:ring-primary/15";
@@ -28,13 +31,27 @@ export default function OrderForm() {
   const preLabel = flavorOptions.find((o) => o.slug === slug)?.label ?? "";
 
   const [flavorLabel, setFlavorLabel] = useState(preLabel);
+  const [packFlavors, setPackFlavors] = useState<string[]>([]);
+  const [packError, setPackError] = useState(false);
   const selected = flavorOptions.find((o) => o.label === flavorLabel);
   const variantRows: Row[] = selected?.prices ?? genericGrammages;
+  const isCustomPack = selected?.isCustomPack === true;
+
+  function togglePackFlavor(flavor: string) {
+    setPackError(false);
+    setPackFlavors((current) => current.includes(flavor)
+      ? current.filter((item) => item !== flavor)
+      : [...current, flavor]);
+  }
 
   function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
     if (!form.reportValidity()) return;
+    if (isCustomPack && packFlavors.length === 0) {
+      setPackError(true);
+      return;
+    }
     const fd = new FormData(form);
     const v = (k: string) => (fd.get(k)?.toString() ?? "").trim();
     const msg =
@@ -43,7 +60,9 @@ export default function OrderForm() {
       `📱 Téléphone : ${v("phone")}\n` +
       `📍 Ville : ${v("city")}\n` +
       `🥣 Saveur : ${v("flavor")}\n` +
-      `⚖️ Poids & prix : ${v("variant")}\n` +
+      (isCustomPack
+        ? `✨ Saveurs choisies : ${packFlavors.join(", ")}\n📦 Format du pack : ${v("variant")}\n`
+        : `⚖️ Poids & prix : ${v("variant")}\n`) +
       (v("allergies") ? `⚠️ Allergies : ${v("allergies")}\n` : "") +
       `\nMerci de me confirmer la disponibilité et le total. 🙏`;
     window.open(waLink(msg), "_blank", "noopener");
@@ -82,7 +101,10 @@ export default function OrderForm() {
           name="flavor"
           required
           value={flavorLabel}
-          onChange={(e) => setFlavorLabel(e.target.value)}
+          onChange={(e) => {
+            setFlavorLabel(e.target.value);
+            setPackError(false);
+          }}
           className={`${field} ${flavorLabel ? "border-primary ring-[3px] ring-primary/10" : ""}`}
         >
           <option value="" disabled>Choisir une saveur…</option>
@@ -92,19 +114,50 @@ export default function OrderForm() {
         </select>
       </div>
 
+      {isCustomPack && (
+        <fieldset className="mb-5 rounded-2xl border border-primary/15 bg-primary/[.045] p-4">
+          <legend className="px-1 font-semibold text-[.9rem] text-ink">Compose ton pack <span className="text-secondary">*</span></legend>
+          <p className="mt-1 text-[.8rem] leading-snug text-muted">Coche les saveurs que tu veux recevoir. Tu peux en choisir plusieurs.</p>
+          <div className="mt-3 grid gap-2 sm:grid-cols-2">
+            {products.map((product) => {
+              const label = product.subtitle ? `${product.name} — ${product.subtitle}` : product.name;
+              const isChecked = packFlavors.includes(label);
+              return (
+                <label key={product.slug} className={`flex cursor-pointer items-center gap-3 rounded-xl border px-3 py-2.5 text-[.86rem] font-semibold transition-colors ${isChecked ? "border-primary bg-white text-primary shadow-sm" : "border-ink/10 bg-white/65 text-ink hover:border-primary/40"}`}>
+                  <input
+                    type="checkbox"
+                    name="pack-flavors"
+                    value={label}
+                    checked={isChecked}
+                    onChange={() => togglePackFlavor(label)}
+                    className="h-4 w-4 accent-primary"
+                  />
+                  <span>{product.name.replace("Granola ", "")}{product.subtitle ? ` — ${product.subtitle}` : ""}</span>
+                </label>
+              );
+            })}
+          </div>
+          {packError && <p className="mt-3 text-[.8rem] font-semibold text-secondary" role="alert">Choisis au moins une saveur pour ton pack.</p>}
+        </fieldset>
+      )}
+
       <div className="mb-2">
-        <label htmlFor="of-variant" className="block font-semibold text-[.9rem] mb-1.5">Poids &amp; prix *</label>
+        <label htmlFor="of-variant" className="block font-semibold text-[.9rem] mb-1.5">{isCustomPack ? "Format du pack" : "Poids & prix"} *</label>
         <select id="of-variant" name="variant" required defaultValue="" key={flavorLabel} className={field}>
           <option value="" disabled>
-            {selected?.prices ? "Choisir le poids…" : "Choisis d'abord une saveur"}
+            {isCustomPack ? "Choisir le format…" : selected?.prices ? "Choisir le poids…" : "Choisis d'abord une saveur"}
           </option>
-          {variantRows.map(([g, p]) => (
-            <option key={g} value={p ? `${g} — ${p}` : g}>
-              {p ? `${g} — ${p}` : g}
-            </option>
-          ))}
+          {isCustomPack
+            ? packFormats.map((format) => <option key={format} value={format}>{format}</option>)
+            : variantRows.map(([g, p]) => (
+                <option key={g} value={p ? `${g} — ${p}` : g}>
+                  {p ? `${g} — ${p}` : g}
+                </option>
+              ))}
         </select>
-        {selected?.prices && (
+        {isCustomPack ? (
+          <p className="text-muted text-[.78rem] mt-1.5">Le total dépend de tes choix : on te le confirme rapidement sur WhatsApp.</p>
+        ) : selected?.prices && (
           <p className="text-muted text-[.78rem] mt-1.5">Prix dégressifs : plus c&apos;est grand, plus c&apos;est avantageux 😉</p>
         )}
       </div>
