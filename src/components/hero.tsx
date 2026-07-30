@@ -26,19 +26,16 @@ export default function Hero() {
           sizes="100vw"
           className="w-full h-auto"
         />
-        {/* voile clair sur la zone marbre (sous les sachets) : opaque là où se pose le texte */}
-        <div className="absolute inset-x-0 bottom-0 h-[50%] bg-[linear-gradient(0deg,rgba(250,246,238,.98)_58%,rgba(250,246,238,.86)_80%,rgba(250,246,238,0)_100%)]" />
-        {/* titre court + petit CTA, posés sur l'espace vide EN DESSOUS du produit */}
+        {/* voile clair sur la zone marbre (sous les sachets) : opaque là où se pose
+            le texte. Plus bas que la version avec titre — il y a moins à couvrir. */}
+        <div className="absolute inset-x-0 bottom-0 h-[38%] bg-[linear-gradient(0deg,rgba(250,246,238,.97)_30%,rgba(250,246,238,.78)_62%,rgba(250,246,238,0)_100%)]" />
+        {/* accroche + petit CTA, posés sur l'espace vide EN DESSOUS du produit.
+            Pas de titre visible ici : l'image porte déjà le message. Le h1 reste
+            présent en lecture d'écran pour la structure de la page. */}
         <div className="absolute inset-x-0 bottom-0 px-5 pb-7 text-center">
-          {/* carte opaque : le titre reste net même là où il déborde sur le sachet */}
-          <div className="rounded-[22px] bg-cream px-5 py-4 shadow-[0_16px_38px_-12px_rgba(33,30,24,.3)] ring-1 ring-ink/[.07] animate-[heroRise_.75s_cubic-bezier(.16,1,.3,1)_both]">
-            <h1 className="text-[clamp(1.72rem,7.4vw,2.05rem)] leading-[1.06] text-balance text-ink">
-              Le granola qui <span className="text-accent italic">change ton matin</span>
-            </h1>
-            <span className="mx-auto mt-3 block h-[3px] w-14 rounded-full bg-accent" aria-hidden="true" />
-          </div>
-          <div className="animate-[heroRise_.75s_cubic-bezier(.16,1,.3,1)_both] [animation-delay:150ms]">
-            <p className="text-[.98rem] text-muted font-medium mt-3.5">
+          <h1 className="sr-only">Le granola qui change ton matin</h1>
+          <div className="animate-[heroRise_.75s_cubic-bezier(.16,1,.3,1)_both]">
+            <p className="text-[.98rem] text-muted font-medium">
               Sans conservateurs · 100% artisanal 🇲🇦
             </p>
             <p className="text-[.95rem] text-ink font-semibold mt-2 text-balance">
